@@ -1,0 +1,384 @@
+/* basic */
+
+.main-wrapper {
+	width: 100vw;
+	height: 100vh;
+	/*background: #ccc;*/
+	overflow-y: hidden;
+	background: #ccc url(../images/img-1-large.jpg) no-repeat fixed center;
+	background-size: cover;
+}
+
+.banner {
+	width: inherit;
+	height: inherit;
+
+}
+
+.inner {
+	position: relative;
+	width: 320px;
+	height: 220px;
+	margin: auto;
+	top: 25%;
+}
+
+.do {
+	display: inline-block;
+	position: absolute;
+	background: #4C7DE7;
+}
+
+/* basic end */
+
+/* DO IT */
+
+.DO-D {
+	left: 0;
+	width: 150px;
+	height: 220px;
+	border-radius: 0 50% 50% 0 / 0 60% 60% 0;
+}
+
+.DO-D:after {
+	content: "";
+	width: 45px;
+	height: 160px;
+	background: #fff;
+	position: absolute;
+	left: 45px;
+	top: 30px;
+}
+
+.DO-O {
+	right: 0;
+	width: 150px;
+	height: 220px;
+	border-radius: 40% / 30%;
+}
+
+.DO-O:before {
+	content: "";
+	width: 100px;
+	height: 35px;
+	background: #fff;
+	position: absolute;
+	top: 30px;
+	left: 25px;
+}
+
+.DO-O:after {
+	  content: "";
+	  width: 40px;
+	  height: 125px;
+	  background: #fff;
+	  position: absolute;
+	  top: 65px;
+	  left: 55px;
+}
+
+/* DO IT end */
+
+/* IMMEDIATELY word */
+
+.immediately-word {
+	position: absolute;
+	bottom: -60px;
+	width: 320px;
+	height: 45px;
+}
+
+.immediately-word .word {
+	display: inline-block;
+	position: relative;
+	height: 45px;
+	margin: 0 -2px;
+}
+
+.immediately-word .word * {
+	background: #fff;
+	position: absolute;
+}
+
+.word-I {
+	width: 12px;
+	background: #fff;
+}
+
+.word-M {
+	width: 38px;
+}
+
+.word-M .M-left {
+	width: 10px;
+	height: inherit;
+	left: 0;
+}
+
+.word-M .M-middle {
+	width: 8px;
+	height: inherit;
+}
+
+.word-M .M-middle:nth-child(2) {
+	left: 11px;
+
+	-webkit-transform: skewX(11deg);
+	-moz-transform: skewX(11deg);
+}
+
+.word-M .M-middle:nth-child(3) {
+	right: 11px;
+
+	-webkit-transform: skewX(-11deg);
+	-moz-transform: skewX(-11deg);
+}
+
+.word-M .M-right {
+	width: 10px;
+	height: inherit;
+	right: 0;
+}
+
+.word-E {
+	width: 25px;
+}
+
+.word-E .E-left {
+	width: 12px;
+	height: inherit;
+	left: 0;
+}
+
+.word-E .E-inside {
+	width: inherit;
+	height: 9px;
+}
+
+.word-E .E-top {
+	top: 0;
+}
+
+.word-E .E-middle {
+	top: 18px;
+}
+
+.word-E .E-bottom {
+	bottom: 0;
+}
+
+.word-D {
+	width: 8px;
+	height: 25px !important;
+	background: transparent;
+	border: 10px solid #fff;
+	border-radius: 0 50% 50% 0 / 0 60% 60% 0;
+}
+
+/*.word-D {
+	width: 30px;
+	border-radius: 0 50% 50% 0 / 0 60% 60% 0;
+	background: #fff;
+}
+
+.word-D:after {
+	content: "";
+	width: 8px;
+	height: 31px;
+	border-radius: 0 50% 50% 0 / 0 60% 60% 0;
+	background: #ccc;
+	position: absolute;
+	left: 11px;
+	top: 7px;
+}*/
+
+.word-A {
+	width: 28px;
+}
+
+.word-A .A-left, .word-A .A-right {
+	width: 12px;
+	height: 45px;
+}
+
+.word-A .A-left {
+	left: 0;
+
+	-webkit-transform: skewX(-15deg);
+	-moz-transform: skewX(-15deg);
+}
+
+.word-A .A-middle {
+	width: 20px;
+	height: 8px;
+	bottom: 8px;
+}
+
+.word-A .A-right {
+	right: 0;
+
+	-webkit-transform: skewX(15deg);
+	-moz-transform: skewX(15deg);
+}
+
+.word-T {
+	width: 30px;
+}
+
+.word-T .T-row {
+	width: inherit;
+	height: 9px;
+	top: 0;
+}
+
+.word-T .T-col {
+	width: 12px;
+	height: 35px;
+	top: 9px;
+	left: 50%;
+	margin-left: -6px;
+}
+
+.word-L {
+	width: 25px;
+}
+
+.word-L .L-col {
+	width: 10px;
+	height: inherit;
+	left: 0;
+}
+
+.word-L .L-row {
+	height: 10px;
+	width: inherit;
+	bottom: 0;
+}
+
+.word-Y {
+	width: 21px;
+}
+
+.word-Y .Y-left {
+	width: 10px;
+	height: 25px;
+	left: 0;
+
+	-webkit-transform: skewX(20deg);
+}
+
+.word-Y .Y-right {
+	width: 10px;
+	height: 25px;
+	right: 0;
+
+	-webkit-transform: skewX(-20deg);
+}
+
+.word-Y .Y-bottom {
+	width: 11px;
+	height: 20px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+}
+
+.word:nth-child(6) {
+	margin-right: 3px;
+}
+
+.word:nth-child(8) {
+	  margin: 0 -3px 0 -5px;
+}
+
+.word:last-child {
+	margin: 0 0 0 -7px;
+}
+
+/* IMMEDIATELY word end*/
+
+/* 三维旋转动画 */
+
+/* .head-sprial {
+	-webkit-perspective: 800;
+	-webkit-perspective-origin: 50% 50%;
+
+	width: 80px;
+	height: 35px;
+}
+
+.pageGroup {
+	width: 80px;
+	height: 35px;
+	position: relative;
+	top: 30px;
+	left: 35px;
+
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all 1s linear;
+
+	-webkit-animation: spiral 8s linear infinite;
+	-moz-animation: spiral 8s linear infinite;
+}
+
+.page {
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	opacity: 0.5;
+}
+
+#page1 {
+	background: #0F3FE8;
+	background: -webkit-linear-gradient(to bottom left, red, yellow);
+	background: -moz-linear-gradient(to bottom left, red, yellow);
+	background: linear-gradient(to bottom left, red, yellow);
+
+	-webkit-transform-origin: left;
+	-webkit-transform: translateZ(40px) rotateY(90deg);
+}
+
+#page2 {
+	background: #078C03;
+	background: -webkit-linear-gradient(to top right, yellow, blue);
+	background: -moz-linear-gradient(to top right, yellow, blue);
+	background: linear-gradient(to top right, yellow, blue);
+
+	-webkit-transform: translateZ(40px);
+}
+
+#page3 {
+	background: #BD000C;
+	background: -webkit-linear-gradient(to bottom left, blue, green);
+	background: -moz-linear-gradient(to bottom left, blue, green);
+	background: linear-gradient(to bottom left, blue, green);
+
+	-webkit-transform-origin: right;
+	-webkit-transform: translateZ(40px) rotateY(-90deg);
+}
+
+#page4 {
+	background: #FFC300;
+	background: -wekbit-linear-gradient(to top left, green, red);
+	background: -moz-linear-gradient(to top left, green, red);
+	background: linear-gradient(to top left, green, red);
+
+	-webkit-transform: translateZ(-40px);
+}
+
+@-webkit-keyframes spiral {
+	0% {-webkit-transform: rotateY(0);}
+	100% {-webkit-transform: rotateY(360deg);}
+}
+
+@-moz-keyframes spiral {
+	0% {-moz-transform: rotateY(0);}
+	100% {-moz-transform: rotateY(360deg);}
+}
+
+@keyframes spiral {
+	0% {transform: rotateY(0);}
+	100% {transform: rotateY(360deg);}
+} */
+
+/* 三维旋转动画 end */
