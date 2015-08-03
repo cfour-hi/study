@@ -1,0 +1,34 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.list-item {
+	width: 20%;
+	height: 100vh;
+	overflow-y: scroll;
+	display: inline-block;
+	float: left;
+}
+
+.list-item li {
+	font-family: "arial black";
+}
+
+.list-item li a {
+	display: block;
+line-height: 30px;
+font-size: 14px;
+	text-decoration: none;
+}
+
+.list-item a:hover {
+	text-decoration: underline;
+}
+
+.project-container {
+	width: 80%;
+	height: 100vh;
+	display: inline-block;
+}
