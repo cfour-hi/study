@@ -1,0 +1,61 @@
+body {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	text-align: center;
+	letter-spacing: 2px;
+	background-color: #1c1c1c;
+	font-size: 14px;
+}
+
+#container {
+	width: 800px;
+	margin: auto;
+	padding: 50px 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.card {
+	float: left;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 5px solid #1c1c1c;
+	background-color: #808687;
+	cursor: pointer;
+}
+
+.wave {
+	-webkit-animation: wave 0.4s linear;
+	-moz-animation: wave 0.4s linear;
+	-ms-animation: wave 0.4s linear;
+	-o-animation: wave 0.4s linear;
+	animation: wave 0.4s linear;
+}
+
+@-webkit-keyframes wave {
+	0% {-webkit-transform: translate(0); background-color: #808687;}
+	50% {-webkit-transform: translate(0, -15px); background-color: #f700ff;}
+	100% {-webkit-transform: translate(0); background-color: #808687;}
+}
+@-moz-keyframes wave {
+	0% {-moz-transform: translate(0); background-color: #808687;}
+	50% {-moz-transform: translate(0, -15px); background-color: #f700ff;}
+	100% {-moz-transform: translate(0); background-color: #808687;}
+}
+@-ms-keyframes wave {
+	0% {-ms-transform: translate(0); background-color: #808687;}
+	50% {-ms-transform: translate(0, -15px); background-color: #f700ff;}
+	100% {-ms-transform: translate(0); background-color: #808687;}
+}
+@-o-keyframes wave {
+	0% {-o-transform: translate(0); background-color: #808687;}
+	50% {-o-transform: translate(0, -15px); background-color: #f700ff;}
+	100% {-o-transform: translate(0); background-color: #808687;}
+}
+@keyframes wave {
+	0% {transform: translate(0); background-color: #808687;}
+	50% {transform: translate(0, -15px); background-color: #f700ff;}
+	100% {transform: translate(0); background-color: #808687;}
+}

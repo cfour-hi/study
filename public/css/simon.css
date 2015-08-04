@@ -1,0 +1,157 @@
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    text-align: center;
+	background-color: #141414;
+}
+
+#container {
+	padding-bottom: 38px;
+}
+
+#modal {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.92);
+	color: #fff;
+	z-index: 100;
+}
+
+h1 {
+	font-size: 60px;
+	margin: 100px 0 50px;
+}
+
+h2 {
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+#fail {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    background-color: #BD000C;
+    z-index: 0;
+}
+
+#play {
+	border: none;
+	width: 200px;
+	height: 60px;
+	background-color: #0F3FE8;
+	font-size: 30px;
+	color: #fff;
+	margin-top: 50px;
+}
+
+#level {
+	font-size: 24px;
+	padding: 20px 0 40px;
+	color: #fff;
+}
+
+#game_wrap {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	margin: auto;
+}
+
+#game_container {
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	background-color: #000;
+	position: absolute;
+}
+
+#pad_container {
+	position:relative;
+	top: 25px;
+	left: 25px;
+	width: 450px;
+	height: 450px;
+}
+
+.pad {
+	width: 210px;
+	height: 210px;
+	position: absolute;
+}
+
+.green_pad {
+	background-color: #078C03;
+}
+
+#green {
+	top: 0;
+	left: 0;
+	border-radius: 100% 0 0;
+}
+
+.red_pad {
+	background-color: #BD000C;
+}
+
+#red {
+	top: 0;
+	right: 0;
+	border-radius: 0 100% 0 0;
+}
+
+.yellow_pad {
+	background-color: #FFC300;
+}
+
+#yellow {
+	left: 0;
+	bottom: 0;
+	border-radius: 0 0 0 100%;
+}
+
+.blue_pad {
+	background-color: #0F3FE8;
+}
+
+#blue {
+	right: 0;
+	bottom: 0;
+	border-radius: 0 0 100%;
+}
+
+#center_disk {
+	width: 170px;
+	height: 170px;
+	background-color: #000;
+	position: absolute;
+	left: 140px;
+	top: 140px;
+	border-radius: 50%;
+	z-index: 10;
+}
+
+.glow_red {
+	box-shadow: 0 0 20px rgba(245,102,114,0.7);
+	background-color: #FFC2A6;
+}
+
+.glow_green {
+	box-shadow: 0 0 20px rgba(89,207,81,0.7);
+	background-color: #59CF51;
+}
+
+.glow_yellow {
+	box-shadow: 0 0 20px rgba(255,223,113,0.7);
+	background-color: #FFE8A6;
+}
+
+.glow_blue {
+	box-shadow: 0 0 20px rgba(106,143,232,0.7);
+	background-color: #A9CBFF;
+}

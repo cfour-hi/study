@@ -1,0 +1,24 @@
+body {
+	background-color: black;
+}
+
+#wrap {
+}
+
+#container {
+	width: 900px;
+	margin: 0 auto;
+}
+
+.boxes {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 100px;
+	z-index: 1;
+	background-color: #333;
+}
+
+.clear {
+	clear: both;
+}

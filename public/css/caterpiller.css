@@ -1,0 +1,22 @@
+body {
+	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+	background-color: #000;
+}
+
+.spot {
+	position: absolute;
+	border-radius: 50%;
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+
+	-webkit-animation: spot 2s infinite;
+	-moz-animation: spot 2s infinite;
+	-ms-animation: spot 2s infinite;
+	-o-animation: spot 2s infinite;
+	animation: spot 2s infinite;
+}
+
+@-webkit-keyframes spot {
+	0%,100% {-webkit-transform: scale(1);}
+	25%, 75% {-webkit-transform: scale(1.1);}
+	50% {-webkit-transform: scale(0.9);}
+}

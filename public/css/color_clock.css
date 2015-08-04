@@ -1,0 +1,23 @@
+body {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	text-align: center;
+	color: white;
+	margin: 0 auto;
+	background-color: #bebebe;
+}
+
+h1 {
+	font-size: 40px;
+	padding: 70px 0 50px;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.number {
+	font-size: 120px;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+#bg_color {
+	letter-spacing: 10px;
+}

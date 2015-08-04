@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pixel Painter | 1992</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/pixel_painter.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/jscolor/jscolor.js"></script>
+	<script type="text/javascript" src="js/pixel_painter.js"></script>
+</head>
+<body>
+	<header>
+		
+		<div id="logo">Pixel Painter</div>
+
+		<div id="control_container">
+
+			<div class="control">Color: <input type="text" class="color {adjust: false, pickerPosition: 'bottom'}" /></div>
+			
+			<div class="control">Size: <input type="text" class="size" /></div>
+			
+			<div class="control"><input type="button" class="btn eraser" value="Eraser" /></div>
+			
+			<div class="control"><input type="button" class="btn erase_all" value="Erase All" /></div>
+
+		</div>
+
+		<div class="clear"></div>
+
+	</header>
+
+	<div id="container">
+
+		<canvas id="canvas"></canvas>
+		
+	</div>
+
+</body>
+</html>

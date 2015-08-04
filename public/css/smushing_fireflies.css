@@ -1,0 +1,128 @@
+body {
+	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+	background-color: #000;
+	overflow: scroll;
+}
+
+.drop {
+	position: absolute;
+
+	-webkit-animation: grow 2s;
+	-moz-animation: grow 2s;
+	-ms-animation: grow 2s;
+	-o-animation: grow 2s;
+	animation: grow 2s;
+}
+
+.box0 {
+	height: 50px;
+	width: 50px;
+}
+.box1 {
+	height: 10px;
+	width: 10px;
+}
+.box2 {
+	height: 20px;
+	width: 20px;
+}
+.box3 {
+	height: 5px;
+	width: 5px;
+}
+.box4 {
+	height: 30px;
+	width: 30px;
+}
+.box5 {
+	height: 15px;
+	width: 15px;
+}
+
+.box6 {
+	height: 50px;
+	width: 50px;
+}
+.box7 {
+	height: 10px;
+	width: 10px;
+}
+.box8 {
+	height: 20px;
+	width: 20px;
+}
+.box9 {
+	height: 5px;
+	width: 5px;
+}
+.box10 {
+	height: 30px;
+	width: 30px;
+}
+.box11 {
+	height: 15px;
+	width: 15px;
+}
+
+.box12 {
+	height: 50px;
+	width: 50px;
+}
+.box13 {
+	height: 10px;
+	width: 10px;
+}
+.box14 {
+	height: 20px;
+	width: 20px;
+}
+.box15 {
+	height: 5px;
+	width: 5px;
+}
+.box16 {
+	height: 30px;
+	width: 30px;
+}
+.box17 {
+	height: 15px;
+	width: 15px;
+}
+
+.box18 {
+	height: 50px;
+	width: 50px;
+}
+.box19 {
+	height: 10px;
+	width: 10px;
+}
+.box20 {
+	height: 20px;
+	width: 20px;
+}
+
+@-webkit-keyframes grow {
+	0% {opacity: 1; -webkit-transform: scale(1);}
+	100% {opacity: 0; -webkit-transform: scale(5);}
+}
+
+@-moz-keyframes grow {
+	0% {opacity: 1; -moz-transform: scale(1);};
+	100% {opacity: 0; -moz-transform: scale(5);};
+}
+
+@-ms-keyframes grow {
+	0% {opacity: 1; -ms-transform: scale(1);};
+	100% {opacity: 0; -ms-transform: scale(5);};
+}
+
+@-o-keyframes grow {
+	0% {opacity: 1; -o-transform: scale(1);};
+	100% {opacity: 0; -o-transform: scale(5);};
+}
+
+@keyframes grow {
+	0% {opacity: 1; transform: scale(1);};
+	100% {opacity: 0; transform: scale(5);};
+}

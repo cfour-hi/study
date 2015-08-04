@@ -1,0 +1,146 @@
+body {
+	background-color: #F5F5DC;
+	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #1d113b;
+	overflow: scroll;
+}
+
+#wrap {
+	
+}
+
+#title {
+	font-size: 50px;
+	line-height: 4;
+
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2),
+				 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dice {
+	width: 150px;
+	height: 150px;
+	background-color: purple;
+	display: inline-block;
+	border-radius: 10px;
+	margin: 20px;
+	position: relative;
+
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2) inset, 
+				-1px -1px 3px rgba(0,0,0,0.2) inset,
+				-1px -1px 0 rgba(255,255,255,0.2);
+}
+
+.pip {
+	width: 33px;
+	height: 33px;
+	background-color: white;
+	border-radius: 50%;
+	position: absolute;
+
+	box-shadow: 1px 1px 0 rgba(0,0,0,0.7) inset, 
+				1px 1px 0 rgba(255,255,255,0.5);
+}
+
+.pip_1 {
+	left: 12px;
+	top: 12px;
+}
+
+.pip_2 {
+	left: 12px;
+	top: 60px;
+}
+
+.pip_3 {
+	left: 12px;
+	bottom: 12px;
+}
+
+.pip_4 {
+	left: 60px;
+	top: 60px;
+}
+
+.pip_5 {
+	top: 12px;
+	right: 12px;
+}
+
+.pip_6 {
+	top: 60px;
+	right: 12px;
+}
+
+.pip_7 {
+	bottom: 12px;
+	right: 12px;
+}
+
+#btn {
+	padding: 20px 0;
+	width: 200px;
+	margin: 0 auto;
+	background-color: #46d11d;
+	margin-top: 100px;
+	border-radius: 10px;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.btn_up {
+	box-shadow: 1px 0 0 #37a417,
+				0 1px 0 #2f8e14, 
+				2px 1px 0 #37a417,
+				1px 2px 0 #2f8e14,
+				3px 3px 1px rgba(0,0,0,0.3);
+}
+
+.btn_down {
+	box-shadow: -1px 0 0 #2f8e14,
+				0 -1px 0 #287811, 
+				-2px -1px 0 #2f8e14,
+				-1px -2px 0 #287811,
+				-2px -2px 1px rgba(0,0,0,0.5),
+				0 0 4px rgba(0,0,0,0.3) inset;
+}
+
+.shake {
+	-webkit-animation: shake 1s;
+	-moz-animation: shake 1s;
+	-ms-animation: shake 1s;
+	-o-animation: shake 1s;
+	animation: shake 1s;
+}
+
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-webkit-transform: translateX(5px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-webkit-transform: translateX(-5px);}
+}
+
+@-moz-keyframes shake {
+	0%, 100% {-moz-transform: translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-moz-transform: translateX(5px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-moz-transform: translateX(-5px);}
+}
+
+@-ms-keyframes shake {
+	0%, 100% {-ms-transform: translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-ms-transform: translateX(5px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-ms-transform: translateX(-5px);}
+}
+
+@-o-keyframes shake {
+	0%, 100% {-o-transform: translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-o-transform: translateX(5px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-o-transform: translateX(-5px);}
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {transform: translateX(5px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {transform: translateX(-5px);}
+}

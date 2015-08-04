@@ -1,0 +1,79 @@
+body {
+	font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+	background-color: #ffe9b8;
+	color: #4d2b1c;
+	letter-spacing: 2px;
+}
+
+#wrap {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+header {
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+
+}
+
+header h1 {
+	font-size: 30px;
+	line-height: 60px;
+}
+
+#container {
+	margin-top: 40px;
+	padding-bottom: 18px;
+}
+
+.question_box {
+	width: 520px;
+	font-size: 18px;
+}
+
+.question {
+	background-color: #ff913e;
+	padding: 10px;
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+table {
+	padding: 20px 30px;
+}
+
+td {
+	padding: 10px 0;
+}
+
+input {
+	margin-right: 10px;
+}
+
+#submitBtn {
+	border: none;
+	background-color: #4d2b1c;
+	font-size: 17px;
+	color: #fff;
+	padding: 10px 20px;
+	letter-spacing: 1px;
+	cursor: pointer;
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#score {
+	font-size: 50px;
+	text-align: center;
+	margin-top: 50px;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	margin-right: 60px;
+}
+
+#message {
+	text-align: center;
+	margin-top: 30px;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	font-size: 30px;
+	margin-right: 60px;
+}

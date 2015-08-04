@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Stopwatch | 1992</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/stopwatch.css">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/stopwatch.js"></script>
+</head>
+<body id="stopwatch">
+	<header id="header" class="header">
+		<h1 id="title">Stopwatch</h1>
+		<div class="clear"></div>
+	</header><!-- /header -->
+
+	<div id="container">
+		<div id="clock">
+			<div class="time_unit">
+				<div class="digit">
+					<div class="hour_tens bar hor top">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="hour_tens bar hor mid">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="hour_tens bar hor bottom">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="hour_tens bar ver top left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="hour_tens bar ver top right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="hour_tens bar ver bottom left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="hour_tens bar ver bottom right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+				</div>
+
+				<div class="digit">
+					<div class="hour_ones bar hor top">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="hour_ones bar hor mid">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="hour_ones bar hor bottom">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="hour_ones bar ver top left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="hour_ones bar ver top right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="hour_ones bar ver bottom left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="hour_ones bar ver bottom right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="colon">:</div>
+
+			<div class="time_unit">
+				<div class="digit">
+					<div class="minute_tens bar hor top">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="minute_tens bar hor mid">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="minute_tens bar hor bottom">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="minute_tens bar ver top left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="minute_tens bar ver top right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="minute_tens bar ver bottom left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="minute_tens bar ver bottom right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+				</div>
+
+				<div class="digit">
+					<div class="minute_ones bar hor top">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="minute_ones bar hor mid">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="minute_ones bar hor bottom">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="minute_ones bar ver top left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="minute_ones bar ver top right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="minute_ones bar ver bottom left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="minute_ones bar ver bottom right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="colon">:</div>
+
+			<div class="time_unit">
+				<div class="digit">
+					<div class="second_tens bar hor top">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="second_tens bar hor mid">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="second_tens bar hor bottom">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="second_tens bar ver top left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="second_tens bar ver top right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="second_tens bar ver bottom left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="second_tens bar ver bottom right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+				</div>
+
+				<div class="digit">
+					<div class="second_ones bar hor top">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="second_ones bar hor mid">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="second_ones bar hor bottom">
+						<div class="tri_left"></div>
+						<div class="tri_right"></div>
+					</div>
+					<div class="second_ones bar ver top left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="second_ones bar ver top right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="second_ones bar ver bottom left">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+					<div class="second_ones bar ver bottom right">
+						<div class="tri_top"></div>
+						<div class="tri_bottom"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button type="button" class="button" id="start">Start</button>
+		<button type="button" class="button" id="stop">Stop</button>
+		<button type="button" class="button" id="reset">Reset</button>
+	</div>
+</div>
+</body>
+</html>

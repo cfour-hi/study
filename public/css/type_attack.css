@@ -1,0 +1,49 @@
+body {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	background-color: #fbfbfb;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+#modal {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #fbfbfb;
+}
+
+#modal h1 {
+	font-size: 46px;
+	margin: 200px 0 50px;
+}
+
+h2 {
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+#container {
+	padding-bottom: 40px;
+}
+
+#stat_container {
+	padding: 30px;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	background-color: #f3f3f3;
+	font-size: 20px;
+}
+
+.stat {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.score {
+	font-size: 46px;
+	font-weight: bold;
+	margin-top: -30px;
+	margin-bottom: 40px;
+}

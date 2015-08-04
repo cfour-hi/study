@@ -1,0 +1,154 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	background-color: #090014;
+	color: #4c5262;
+}
+
+header {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	padding: 15px 20px;
+}
+
+#title {
+	float: left;
+	font-size: 24px;
+	letter-spacing: 20px;
+}
+
+#home {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+#container {
+	color: #9db5f4;
+}
+
+#clock {
+	margin: 100px auto;
+	position: relative;
+}
+
+.time_unit {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 10px;
+}
+
+.digit {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px;
+	width: 70px;
+	height: 132px;
+}
+
+.bar {
+	box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.hor {
+	width: 38px;
+	height: 14px;
+	position: absolute;
+	background-color: #9db5f4;
+	left: 16px;
+}
+
+.hor.mid {
+	top: 59px;
+}
+
+.hor.bottom {
+	bottom: 0;
+}
+
+.ver {
+	width: 14px;
+	height: 42px;
+	position: absolute;
+	background-color: #9db5f4;
+}
+
+.ver.top {
+	top: 16px;
+}
+
+.ver.bottom {
+	bottom: 16px;
+}
+
+.left {
+	left: 0;
+}
+
+.right {
+	right: 0;
+}
+
+.tri_left {
+	position: absolute;
+	left: -7px;
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-right: 7px solid #9db5f4;
+}
+
+.tri_right {
+	position: absolute;
+	right: -7px;
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-left: 7px solid #9db5f4;
+}
+
+.tri_top {
+	position: absolute;
+	top: -7px;
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #9db5f4;
+}
+
+.tri_bottom {
+	position: absolute;
+	bottom: -7px;
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid #9db5f4;
+}
+
+.colon {
+	display: inline-block;
+	font-size: 140px;
+	vertical-align: top;
+}
+
+.button {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size: 18px;
+	color: #2a2d36;
+	background-color: #b0b5c2;
+	padding: 10px 20px;
+	margin: 0 10px;
+	letter-spacing: 5px;
+	width: 120px;
+	height: 40px;
+	font-weight: bold;
+}
+
+.button:disabled {
+	color: #949bac;
+}

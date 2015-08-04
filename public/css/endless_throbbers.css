@@ -1,0 +1,52 @@
+body {
+	text-align: center;
+    background-color: #eee;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+#container {
+	padding-top: 200px;
+	color: #aaa;
+}
+
+#message_container {
+	height: 20px;
+}
+
+p {
+	font-size: 20px;
+}
+
+.spin {
+	-webkit-animation: spin 2s infinite linear;
+	-moz-animation: spin 2s infinite linear;
+	-ms-animation: spin 2s infinite linear;
+	-o-animation: spin 2s infinite linear;
+	animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+	from {-webkit-transform: rotate(0);}
+	to {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+	from {-moz-transform: rotate(0);}
+	to {-moz-transform: rotate(360deg);}
+}
+
+@-ms-keyframes rotate {
+	from {-ms-transform: rotate(0);}
+	to {-ms-transform: rotate(360deg);}
+}
+
+@-o-keyframes rotate {
+	from {-o-transform: rotate(0);}
+	to {-o-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}

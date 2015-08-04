@@ -1,0 +1,34 @@
+body {
+	letter-spacing: 2px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#wrap {
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+img {
+	margin: 60px;
+	cursor: pointer;
+}
+
+#text_container {
+	margin: 0 auto;
+	width: 480px;
+	cursor: pointer;
+	padding: 10px;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+.box_shadow {
+	box-shadow: 0 0 0 0 rgb(0 ,0 ,0);
+}
+
+.text_shadow {
+	text-shadow: 0 0 0 rgb(0, 0, 0);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SCRAMBLED | 1992</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/scrambled.css">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scrambled.js"></script>
+</head>
+<body id="scrambled">
+	<header id="header" class="header">
+		<div id="title">SCRAMBLED!</div>
+	</header>
+
+	<div id="container">
+		<div id="prompt_message">
+			<div id="message">
+				You have three chances to unscramble the word.<br />
+				If you succeed, you get a point.<br />
+				If you fail, you lose a point.
+			</div>
+			<div id="word"></div>
+			<button type="button" id="play">Let's Play!</button>
+		</div>
+		<div id="game_container">
+			<div id="game">
+				<div id="count">Score: 0</div>
+				<div class="clear"></div>
+				<div id="letters"></div>
+				<form>
+					<input type="text" id="guess" placeholder="Enter your guess" />
+					<input type="submit" id="submit" value="Submit" autocomplete="off" />
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

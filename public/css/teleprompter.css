@@ -1,0 +1,81 @@
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: #f4f4f6;
+	letter-spacing: 2px;
+	overflow-y: hidden;
+}
+
+header {
+	position: relative;
+	background-color: #2f2f39;
+	padding: 10px 20px;
+}
+
+header h1 {
+	text-align: left;
+	display: inline-block;
+	font-size: 22px;
+}
+
+#home {
+	float: right;
+	font-size: 18px;
+}
+
+header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#container {
+	text-align: center;
+	position: relative;
+}
+
+#prompt {
+	line-height: 30px;
+	margin: 30px;
+	font-size: 20px;
+}
+
+textarea {
+	height: 300px;
+	width: 400px;
+	padding: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#submitBtn {
+	border: none;
+	background-color: #2f2f39;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px 20px;
+	display: inherit;
+	font-family: inherit;
+	margin: 20px auto;
+	text-shadow: 0 0 1px rgba(0,0,0,0.8);
+}
+
+
+.dark {
+	color: #0f0f12;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2),
+				-1px -1px 0 rgba(0,0,0,0.4);
+}
+
+.teleprompter_screen {
+	position: absolute;
+	top: 0;
+	padding: 150px 100px;
+	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+	font-size: 60px;
+	color: #fafaff;
+	line-height: 1.7;
+	text-align: left;
+
+	text-shadow: 0 0 5px #5d5dff, 0 0 3px #5d5dff, 0 0 2px #1c1c52, 0 0 1px #000, 0 0 1px #000;
+	z-index: -1;
+}

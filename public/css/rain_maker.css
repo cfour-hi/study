@@ -1,0 +1,163 @@
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    background-color: #dddde2;
+    overflow: hidden;
+}
+
+#btn-container {
+	position: absolute;
+	top: 100px;
+	left: 25px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.btn {
+	width: 150px;
+	line-height: 40px;
+	height: 40px;
+	margin: 10px 0;
+	border-radius: 20px;
+	background-color: #a6ada7;
+	color: #505055;
+	cursor: pointer;
+}
+
+#container {
+	position: relative;
+	width: 350px;
+	margin: auto;
+}
+
+#cloud {
+	position: relative;
+	top: 120px;
+	width: 350px;
+	height: 120px;
+	border-radius: 60px;
+
+	background-color: #a6ada7;
+	background: linear-gradient(to bottom, #A6ADA7, #737A74);
+}
+
+#cloud:after, #cloud:before {
+	content: '';
+	position: absolute;
+	background-color: #a6ada7;
+	z-index: -1;
+}
+
+#cloud:before {
+	width: 100px;
+	height: 100px;
+	top: -50px;
+	left: 50px;
+	border-radius: 50px;
+}
+
+#cloud:after {
+	width: 180px;
+	height: 180px;
+	top: -90px;
+	right: 50px;
+	border-radius: 100px;
+}
+
+.drop {
+	position: absolute;
+	top: 120px;
+	z-index: -2;
+}
+
+.rain {
+	width: 8px;
+	height: 8px;
+	border-radius: 100%;
+	border-top-right-radius: 0;
+	background-color: #105570;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.animate {
+	-webkit-animation: falling 5s infinite ease-in;
+	-moz-animation: falling 5s infinite ease-in;
+	-ms-animation: falling 5s infinite ease-in;
+	-o-animation: falling 5s infinite ease-in;
+	animation: falling 5s infinite ease-in;
+}
+
+.heart {
+	width: 10px;
+	height: 9px;
+}
+
+.heart:before, .heart:after {
+	position: absolute;
+	content: "";
+	width: 5px;
+	height: 8px;
+	left: 5px;
+	top: 0;
+	background-color: #fa3c88;
+
+	border-radius: 5px 5px 0 0;
+	
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+
+	-webkit-transform-origin: 0 100%;
+	-moz-transform-origin: 0 100%;
+	-ms-transform-origin: 0 100%;
+	-o-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+
+.heart:after {
+	left: 0;
+
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	-ms-transform-origin: 100% 100%;
+	-o-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+}
+
+@-webkit-keyframes falling {
+	0% {top: 120px;}
+	50% {opacity: 1;}
+	100% {top: 1500px; opacity: 0;}
+}
+@-moz-keyframes falling {
+	0% {top: 120px;}
+	50% {opacity: 1;}
+	100% {top: 1500px; opacity: 0;}
+}
+@-ms-keyframes falling {
+	0% {top: 120px;}
+	50% {opacity: 1;}
+	100% {top: 1500px; opacity: 0;}
+}
+@-o-keyframes falling {
+	0% {top: 120px;}
+	50% {opacity: 1;}
+	100% {top: 1500px; opacity: 0;}
+}
+@keyframes falling {
+	0% {top: 120px;}
+	50% {opacity: 1;}
+	100% {top: 1500px; opacity: 0;}
+}

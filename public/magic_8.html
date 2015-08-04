@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Magic 8 ball</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/magic_8.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/magic_8.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Magic 8 Ball</h1>
+		<div class="clear"></div>
+	</header>
+
+	<div id="container">
+		<div id="ball_container">
+			<div id="ball">
+				<div id="answer_container">
+					<div id="viewport">
+						<div id="answer_tile">
+							<div id="tile"></div>
+							<div id="answer"></div>
+						</div>
+					</div>
+			
+					<div id="viewport_rim"></div>
+				</div>
+			
+				<div id="eight_logo">
+					<p id="eight">8</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form>
+		<input type="text" id="text_box" autocomplete="off" placeholder="Enter a question" />
+		<input type="submit" id="button" value="Ask">
+	</form>
+</body>
+</html>

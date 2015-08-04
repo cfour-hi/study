@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hipster Quiz | 1992</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/hipster_quiz.css">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hipster_quiz.js" ></script>
+</head>
+<body id="hipster_quiz">
+	<header id="header" class="header">
+	<h1>Are you a San Francisco Hipster?</h1>
+	<p>Take this short quiz to find out how much of an SF hipster you are.</p>
+	</header><!-- /header -->
+	<div id="wrap">
+		<div id="container">
+			<form>
+				<div class="question_box" id="q1">
+					<div class="question">1. Are you a hipster?</div>
+					<table>
+						<tr><td><input type="radio" name="q1" value="1" /></td><td>Yes.</td></tr>
+						<tr><td><input type="radio" name="q1" value="3" /></td><td>No.</td></tr>
+						<tr><td><input type="radio" name="q1" value="0" /></td><td>What is a hipster?</td></tr>
+						<tr><td><input type="radio" name="q1" value="2" /></td><td>I don't do labels.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q2">
+					<div class="question">2. How do you get around?</div>
+					<table>
+						<tr><td><input type="radio" name="q2" value="1"></td><td>Hybrid</td></tr>
+						<tr><td><input type="radio" name="q2" value="0"></td><td>BART</td></tr>
+						<tr><td><input type="radio" name="q2" value="2"></td><td>Feet</td></tr>
+						<tr><td><input type="radio" name="q2" value="3"></td><td>Fixie</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q3">
+					<div class="question">3. When was your last PBR</div>
+					<table>
+						<tr><td><input type="radio" name="q3" value="3"></td><td>I'm holding one right now!</td></tr>
+						<tr><td><input type="radio" name="q3" value="2"></td><td>I had one a few weeks ago.</td></tr>
+						<tr><td><input type="radio" name="q3" value="1"></td><td>Not since college</td></tr>
+						<tr><td><input type="radio" name="q3" value="0"></td><td>What the hell is a PBR?</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q4">
+					<div class="question">4. Best place for a burrito?</div>
+					<table>
+						<tr><td><input type="radio" name="q4" value="3"></td><td>Papalotes.</td></tr>
+						<tr><td><input type="radio" name="q4" value="0"></td><td>Chipotle.</td></tr>
+						<tr><td><input type="radio" name="q4" value="2"></td><td>La Taqueria.</td></tr>
+						<tr><td><input type="radio" name="q4" value="1"></td><td>Taco Bell.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q5">
+					<div class="question">5. How do you feel about mustaches?</div>
+					<table>
+						<tr><td><input type="radio" name="q5" value="1"></td><td>I totally dig the ones on the cars!</td></tr>
+						<tr><td><input type="radio" name="q5" value="0"></td><td>Ew!</td></tr>
+						<tr><td><input type="radio" name="q5" value="2"></td><td>I have a tattoo of one on my finger.</td></tr>
+						<tr><td><input type="radio" name="q5" value="3"></td><td>Why don’t you bask in the glory of my mustache and tell me how you feel about it?</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q6">
+					<div class="question">6. Coffee time! Where are you headed?</div>
+					<table>
+						<tr><td><input type="radio" name="q6" value="1"></td><td>Home to my Nespresso machine. </td></tr>
+						<tr><td><input type="radio" name="q6" value="2"></td><td>The Creamery in SOMA.</td></tr>
+						<tr><td><input type="radio" name="q6" value="0"></td><td>Starbucks... there are three in eyesight of wherever I am! </td></tr>
+						<tr><td><input type="radio" name="q6" value="3"></td><td>Four Barrel Coffee in the Mission.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q7">
+					<div class="question">7. Tell me about your favorite jean style.
+					</div>
+					<table>
+						<tr><td><input type="radio" name="q7" value="1"></td><td>Baggier the better.</td></tr>
+						<tr><td><input type="radio" name="q7" value="0"></td><td>Comfortable, tailored fit.</td></tr>
+						<tr><td><input type="radio" name="q7" value="2"></td><td>Skinny and form fitting.</td></tr>
+						<tr><td><input type="radio" name="q7" value="3"></td><td>It is unacceptable to have even one air molecule between my legs and my jeans.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q8">
+					<div class="question">8. Do you pretend to be poor?</div>
+					<table>
+						<tr><td><input type="radio" name="q8" value="2"></td><td>I am poor!</td></tr>
+						<tr><td><input type="radio" name="q8" value="3"></td><td>I am not defined by my parents' bank account.</td></tr>
+						<tr><td><input type="radio" name="q8" value="1"></td><td>I keep my financial status to myself. </td></tr>
+						<tr><td><input type="radio" name="q8" value="0"></td><td>I have no problem flashing my cash.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q9">
+					<div class="question">9. Did you go to art school?</div>
+					<table>
+						<tr><td><input type="radio" name="q9" value="2"></td><td>Yes.</td></tr>
+						<tr><td><input type="radio" name="q9" value="1"></td><td>No.</td></tr>
+						<tr><td><input type="radio" name="q9" value="3"></td><td>I went to school but I dropped out to focus more on my craft.</td></tr>
+						<tr><td><input type="radio" name="q9" value="0"></td><td>Who goes to art school?!</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q10">
+					<div class="question">10. Best spot in town to catch some tunes?</div>
+					<table>
+						<tr><td><input type="radio" name="q10" value="3"</td><td>Elbo Room.</td></tr>
+						<tr><td><input type="radio" name="q10" value="2"</td><td>Great American Music Hall.</td></tr>
+						<tr><td><input type="radio" name="q10" value="0"</td><td>Mezzanine.</td></tr>
+						<tr><td><input type="radio" name="q10" value="1"</td><td>DNA Lounge.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q11">
+					<div class="question">11. How would you describe your style?</div>
+					<table>
+						<tr><td><input type="radio" name="q11" value="1"</td><td>Classically preppy.</td></tr>
+						<tr><td><input type="radio" name="q11" value="2"</td><td>I live in my designer hoodie.</td></tr>
+						<tr><td><input type="radio" name="q11" value="3"</td><td>Underweight lumberjack.</td></tr>
+						<tr><td><input type="radio" name="q11" value="0"</td><td>Lululemon addict.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q12">
+					<div class="question">12. Nice Mac! How do you carry it around?</div>
+					<table>
+						<tr><td><input type="radio" name="q12" value="0"</td><td>Actually, I don't have a Mac.</td></tr>
+						<tr><td><input type="radio" name="q12" value="3"</td><td>Seat belt buckle, cross-shoulder Chrome bag.</td></tr>
+						<tr><td><input type="radio" name="q12" value="1"</td><td>Briefcase.</td></tr>
+						<tr><td><input type="radio" name="q12" value="2"</td><td>Timbuk2 messenger bag.</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q13">
+					<div class="question">13. How often do you wear flannel?</div>
+					<table>
+						<tr><td><input type="radio" name="q13" value="3"</td><td>Flannel would be my uniform, if I believed in uniforms.</td></tr>
+						<tr><td><input type="radio" name="q13" value="2"</td><td>I have a few items I pull out occasionally.</td></tr>
+						<tr><td><input type="radio" name="q13" value="0"</td><td>I have some flannel pyjamas.</td></tr>
+						<tr><td><input type="radio" name="q13" value="1"</td><td>Not since the 90s!</td></tr>
+					</table>
+				</div>
+
+				<div class="question_box" id="q14">
+					<div class="question">14. The word 'deck' means: </div>
+					<table>
+						<tr><td><input type="radio" name="q14" value="0"</td><td>An outdoor area, often made of wood, adjoining a house. </td></tr>
+						<tr><td><input type="radio" name="q14" value="2"</td><td>A presentation about your company often given to potential investors.</td></tr>
+						<tr><td><input type="radio" name="q14" value="3"</td><td>Cool, cutting edge or hip.</td></tr>
+						<tr><td><input type="radio" name="q14" value="1"</td><td>To knock someone out.</td></tr>
+					</table>
+				</div>
+
+				<input type="submit" id="submitBtn" value="submit" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>

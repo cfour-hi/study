@@ -1,0 +1,41 @@
+body {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    text-align: center;
+	background-color: #fff5e8;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 10px 20px;
+	z-index: 10;
+}
+
+header #sound {
+	display: inline-block;
+}
+
+button[type="button"] {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	padding: 5px 10px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #ffd39a;
+	border: none;
+	cursor: pointer;
+	z-index: 10;
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.clear {
+	clear: both;
+}

@@ -1,0 +1,114 @@
+#wrap {
+	position: relative;
+}
+
+#container {
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+	top: 80px;
+}
+
+.sushi_box {
+	position: absolute;
+	cursor: pointer;
+}
+
+#whitefish {
+	top: 450px;
+	left: 340px;
+}
+
+#roll1 {
+	right: 0;
+}
+
+#sake {
+	right: -50px;
+	top: 170px;
+}
+
+#seaweed {
+
+}
+
+#fancy_roll {
+	right: 0;
+	top: 350px;
+}
+
+#eel2 {
+	top: 0;
+	left: 320px;
+}
+
+#masago {
+	top: 390px;
+	left: 20px;
+}
+
+#shrimp2 {
+	left: 340px;
+	top: 140px;
+}
+
+#rolls {
+	left: 340px;
+	top: 270px;
+}
+
+#pinkfish {
+	top: 210px;
+}
+
+.rotate {
+	-webkit-animation: rotate 2s;
+}
+
+.zoom {
+	-webkit-animation: zoom 2s;
+}
+
+.jump {
+	-webkit-animation: jump 2s;
+}
+
+.tease {
+	-webkit-animation: tease 2s;
+}
+
+.shake {
+	-webkit-animation: shake 2s;
+}
+
+
+@-webkit-keyframes rotate {
+	0% {-webkit-transform: rotate(0);}
+	100% {-webkit-transform: rotate(3600deg);}
+}
+
+@-webkit-keyframes zoom {
+	0% {-webkit-transform: scale(1);}
+	90% {-webkit-transform: scale(2);}
+	92% {-webkit-transform: scale(0.5);}
+	95% {-webkit-transform: scale(1.5);}
+	100% {-webkit-transform: scale(1);}
+}
+
+@-webkit-keyframes jump {
+	0%, 20%, 40%, 60%, 80%, 100% {-webkit-transform: translate(0);}
+	10%, 50%, 90% {-webkit-transform: translate(-30px, -120px) rotate(30deg);}
+	30%, 70% {-webkit-transform: translate(30px, -120px) rotate(-30deg);}
+}
+
+@-webkit-keyframes tease {
+	0%, 25%, 50%, 75%, 100% {-webkit-transform: translate(0);}
+	12%, 62% {-webkit-transform: translate(-70px, -120px) scale(1.5);}
+	37%, 87% {-webkit-transform: translate(70px, -120px) scale(1.5);}
+}
+
+@-webkit-keyframes shake {
+	0%, 100% {transform: translate(0);}
+	2%, 10%, 18%, 26%, 34%, 42%, 50%, 58%, 66%, 74%, 82%, 90%, 98% {transform: translateX(-50px);}
+	6%, 14%, 22%, 30%, 38%, 46%, 54%, 62%, 70%, 78%, 86%, 94% {transform: translateX(50px);}
+}

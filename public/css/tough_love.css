@@ -1,0 +1,58 @@
+body {
+	font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+    background-color: #f6f6ec;
+    color: #1d113b;
+}
+
+#wrap {
+	width: 900px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#text_container {
+	height: 200px;
+	padding: 80px 0;
+}
+
+.phrase {
+	font-size: 36px;
+	line-height: 2;
+}
+
+#question {
+
+}
+
+form {
+	margin-top: 50px;
+}
+
+input {
+	border-radius: 3px;
+	border: none;
+}
+
+#habit {
+	width: 350px;
+	height: 17px;
+	padding: 11px 5px;
+	font-size: 17px;
+	box-shadow: none;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+
+#habit:focus {
+	border: 1px solid rgba(209, 18, 80, 0.3);
+}
+
+#submit_btn {
+	width: 100px;
+	height: 40px;
+	background-color: #d11250;
+	font-size: 18px;
+	color: #fff;
+	letter-spacing: 1px;
+	cursor: pointer;
+}

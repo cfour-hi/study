@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Party Time? | 1992</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/party_time.css">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/party_time.js"></script>
+</head>
+<body>
+	<header id="header" class="header">
+		<h1 class="party">Time to Party?</h1>
+	</header><!-- /header -->
+
+	<div id="container">
+		<h2>Enter a birthdate and time to see if it's party time</h2>
+
+		<form>
+			<label for="bday">Birthdate:</label>
+			<input type="date" id="bday" name="bday" placeholder="mm/dd/yyyy" />
+			<label for="time">Time:</label>
+			<input type="time" id="time" name="btime" >
+			<input type="submit" name="submit" class="button" value="Party?">
+		</form>
+
+		<div class="test"></div>
+
+		<ul>
+			<li class="bdays date"></li>
+			<li class="bdays age years"></li>
+			<li class="bdays age days"></li>
+			<li class="bdays age mins"></li>
+		</ul>
+		<ul>
+			<li class="bdays 10k"></li>
+			<li class="bdays 20k"></li>
+			<li class="bdays 500k"></li>
+			<li class="bdays 1mil"></li>
+			<li class="bdays 10mil"></li>
+			<li class="bdays 50mil"></li>
+			<li class="bdays 1bil"></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+body {
+	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+header {
+	padding: 20px;
+	color: #c20b2a;
+}
+
+header h1 {
+	font-size: 30px;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+#container {
+	position: relative;
+	width: 750px;
+	margin: auto;
+}
+
+#coin {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	cursor: pointer;
+}
+
+#cat_container {
+	position: relative;
+	width: 245px;
+	height: 417px;
+	margin: 80px auto;
+
+	/* perspective 属性定义 3D 元素距视图的距离 */
+	
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000px;
+	-o-perspective: 1000px;
+	perspective: 1000px;
+}
+
+#arm {
+	position: absolute;
+	top: 70px;
+	right: -47px;
+
+	-webkit-transform-origin-y: 100%;
+	-moz-transform-origin: bottom;
+	-ms-transform-origin-y: 100%;
+	-o-transform-origin-y: 100%;
+	transform-origin-y: 100%;
+
+	-webkit-animation: wave 3s infinite linear;
+	-moz-animation: wave 3s infinite linear;
+	-ms-animation: wave 3s infinite linear;
+	-o-animation: wave 3s infinite linear;
+	animation: wave 3s infinite linear;
+}
+
+@-webkit-keyframes wave {
+	0% {-webkit-transform: rotateX(0);}
+	25% {-webkit-transform: rotateX(-30deg);}
+	50% {-webkit-transform: rotateX(0);}
+	75% {-webkit-transform: rotateX(20deg);}
+	100% {-webkit-transform: rotateX(0);}
+}
+@-moz-keyframes wave {
+	0% {-moz-transform: rotateX(0);}
+	25% {-moz-transform: rotateX(-30deg);}
+	50% {-moz-transform: rotateX(0);}
+	75% {-moz-transform: rotateX(20deg);}
+	100% {-moz-transform: rotateX(0);}
+}
+@-ms-keyframes wave {
+	0% {-ms-transform: rotateX(0);}
+	25% {-ms-transform: rotateX(-30deg);}
+	50% {-ms-transform: rotateX(0);}
+	75% {-ms-transform: rotateX(20deg);}
+	100% {-ms-transform: rotateX(0);}
+}
+@-o-keyframes wave {
+	0% {-o-transform: rotateX(0);}
+	25% {-o-transform: rotateX(-30deg);}
+	50% {-o-transform: rotateX(0);}
+	75% {-o-transform: rotateX(20deg);}
+	100% {-o-transform: rotateX(0);}
+}
+@keyframes wave {
+	0% {transform: rotateX(0);}
+	25% {transform: rotateX(-30deg);}
+	50% {transform: rotateX(0);}
+	75% {transform: rotateX(20deg);}
+	100% {transform: rotateX(0);}
+}
