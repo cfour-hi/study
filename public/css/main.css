@@ -28,7 +28,7 @@ body {
 	color: #9453AF;
 }
 
-.list-item a:hover {
+.list-item li a:hover {
 	color: #5898AF;
 }
 
