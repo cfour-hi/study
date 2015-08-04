@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 		if (num > 0) {
 
-			$('#drop_' + num).html("<img src='images/bacon_" + randomInt(1, 2) + ".png' />");
+			$('#drop_' + num).html("<img src='img/bacon_" + randomInt(1, 2) + ".png' />");
 
 			num--;
 

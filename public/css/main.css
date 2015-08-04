@@ -18,13 +18,18 @@ body {
 
 .list-item li a {
 	display: block;
-line-height: 30px;
-font-size: 14px;
+	line-height: 30px;
+	font-size: 14px;
 	text-decoration: none;
+	color: #635EC3;
+}
+
+.list-item li a:visited {
+	color: #9453AF;
 }
 
 .list-item a:hover {
-	text-decoration: underline;
+	color: #5898AF;
 }
 
 .project-container {

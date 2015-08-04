@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 		if (count == 0) {
 
-			$('#container').append("<img src='images/throbber_1.gif' class='throbber' id='" + id + "' />");
+			$('#container').append("<img src='img/throbber_1.gif' class='throbber' id='" + id + "' />");
 
 			$('#' + id).css({'margin-top': '50px'});
 
@@ -82,7 +82,7 @@ $(document).ready(function() {
 			throbber = "throbber_" + rand + ".png";
 		};
 
-		$('body').append("<img src='images/" + throbber + "' class='throbber' id=" + id + " />")
+		$('body').append("<img src='img/" + throbber + "' class='throbber' id=" + id + " />")
 
 		if (rand == 5) {
 

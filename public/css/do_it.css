@@ -5,7 +5,7 @@
 	height: 100vh;
 	/*background: #ccc;*/
 	overflow-y: hidden;
-	background: #ccc url(../images/img-1-large.jpg) no-repeat fixed center;
+	background: #ccc url(../img/img-1-large.jpg) no-repeat fixed center;
 	background-size: cover;
 }
 
