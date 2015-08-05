@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var words = ["abcde", "fghij", "klmno","pqrst", "uvwxyz"];
+	var words = getArray;
 	var word = getWord();
 	var letters = shuffle(word);
 	var score = 0;
@@ -10,14 +10,14 @@ $(document).ready(function() {
 		$('#game').show();
 		$('#message').text("Here's your first word. Good Luck!");
 		$('#guess').focus();
-	})
+	});
 
 	$('#letters').text(letters);
 
 	$('form').on('submit', function(e) {
 		e.preventDefault();
 		checkGuess();
-	})
+	});
 
 	function checkGuess() {
 		var guess = $('#guess').val().toUpperCase();
@@ -35,16 +35,15 @@ $(document).ready(function() {
 				$('#guess').val('');
 
 				newRound();
-			}, 3000)
-		}
+			}, 3000);
+		};
 		else {
 			chances--;
 
 			if (chances > 0) {
 				$('#message').text("Incorrect! " + chances + " chance left");
 				$('#guess').focus();
-			}
-			else {
+			} else {
 				score--;
 				$('#count').text("Score: " + score);
 				$('#message').text("Incorrect! You are out of chances");
@@ -57,9 +56,9 @@ $(document).ready(function() {
 
 					newRound();
 				}, 3000)
-			}
-		}
-	}
+			};
+		};
+	};
 
 	function newRound() {
 		word = getWord();
@@ -80,12 +79,24 @@ $(document).ready(function() {
 			var tmp = w[i];
 			w[i] = w[j];
 			w[j] = tmp;
-		}
+		};
 		return w.join('');
-	}
+	};
 
 	function getWord() {
 		var newWord = words[Math.floor(Math.random() * words.length)];
 		return newWord.toUpperCase();
-	}
-})
+	};
+
+	function getArray() {
+		$.ajax({
+			type: "GET",
+			url: "http://z1992.github.io/study/public/words.html",
+			async: false,
+			success: function (data) {
+				array = data.split('\n');
+			}
+		});
+		return array;
+	};
+});
