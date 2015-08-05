@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 				newRound();
 			}, 3000);
-		};
+		}
 		else {
 			chances--;
 
