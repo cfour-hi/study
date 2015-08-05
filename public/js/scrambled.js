@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var words = getArray;
+	var words = getArray();
 	var word = getWord();
 	var letters = shuffle(word);
 	var score = 0;
