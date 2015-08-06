@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
-	// var words = getWordsArray();
-
 	// 初始化
-	var words = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	var words = getWordsArray();
 
 	var running = true;
 
@@ -48,7 +46,7 @@ $(document).ready(function() {
 		clearInterval(start);
 	};
 
-/*	function getWordsArray() {
+	function getWordsArray() {
 
 		var array;
 
@@ -56,7 +54,7 @@ $(document).ready(function() {
 
 			type: 'GET',
 
-			url: 'words.html',
+			url: 'http://z1992.github.io/study/public/words.html',
 
 			async: false,
 
@@ -67,5 +65,5 @@ $(document).ready(function() {
 		})
 
 		return array;
-	}*/
+	}
 });

@@ -89,6 +89,7 @@ $(document).ready(function() {
 	};
 
 	function getArray() {
+		var array;
 		$.ajax({
 			type: "GET",
 			url: "http://z1992.github.io/study/public/words.html",
