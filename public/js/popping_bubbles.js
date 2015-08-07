@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 		// 源代码被提示下载
 		// $('#sound').html("<embed src='audio/bubbles.wav' hidden=true autostart=true loop=false />");
-		document.getElementById('sound').innerHTML = "<audio autoplay><source src="audio/bubbles.wav" type="audio/wav"></audio>";
+		document.getElementById('sound').innerHTML = "<audio autoplay><source src='audio/bubbles.wav' type='audio/wav'></audio>";
 	});
 
 	$('#canvas').on('click', function(e) {
@@ -107,7 +107,7 @@ $(document).ready(function() {
 
 			// 源代码被提示下载
 			// $('#sound').html("<embed src='audio/pop.wav' hidden=true autostart=true loop=false />");
-			document.getElementById('sound').innerHTML = <audio autoplay><source src="audio/pop.wav" type="audio/wav"></audio>;
+			document.getElementById('sound').innerHTML = "<audio autoplay><source src='audio/pop.wav' type='audio/wav'></audio>";
 
 			bubbles[i] = new Bubble();
 		};
