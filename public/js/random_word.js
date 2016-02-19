@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 			type: 'GET',
 
-			url: 'http://z1992.github.io/study/public/words.html',
+			url: 'http://monine.github.io/study/public/words.html',
 
 			async: false,
 
