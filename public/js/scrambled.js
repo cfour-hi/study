@@ -92,7 +92,7 @@ $(document).ready(function() {
 		var array;
 		$.ajax({
 			type: "GET",
-			url: "http://z1992.github.io/study/public/words.html",
+			url: "http://monine.github.io/study/public/words.html",
 			async: false,
 			success: function (data) {
 				array = data.split('\n');
