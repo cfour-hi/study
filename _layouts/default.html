@@ -16,8 +16,48 @@
 	<!-- 非响应式网站 -->
 	<meta name="viewport" content="width=device-width,user-scalable=yes">
 	<!-- RSS 订阅 -->
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
-	<link rel="stylesheet" type="text/css" href="../public/css/main.css">
+	<!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" /> -->
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.list-item {
+			width: 20%;
+			height: 100vh;
+			overflow-y: scroll;
+			display: inline-block;
+			float: left;
+		}
+
+		.list-item li {
+			font-family: "arial black";
+		}
+
+		.list-item li a {
+			display: block;
+			line-height: 30px;
+			font-size: 14px;
+			text-decoration: none;
+			color: #635EC3;
+		}
+
+		.list-item li a:visited {
+			color: #9453AF;
+		}
+
+		.list-item li a:hover {
+			color: #5898AF;
+		}
+
+		.project-container {
+			width: 80%;
+			height: 100vh;
+			display: inline-block;
+		}
+	</style>
 	<base target="project-show">
 </head>
 <body>
