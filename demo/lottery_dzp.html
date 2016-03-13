@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lottery DZP</title>
+	<style>
+		.turntable {
+			position: absolute;
+			top: 50%;
+			left: 55%;
+			width: 500px;
+			height: 500px;
+			margin-top: -250px;
+			margin-left: -250px;
+		}
+
+		ul {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin: 0;
+			background-image: url("../public/img/turntable-bg.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+
+		ul li {
+			position: absolute;
+			top: 50px;
+			left: 50%;
+			width: 120px;
+			height: 200px;
+			margin-left: -60px;
+			text-align: center;
+			list-style: none;
+			-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+		}
+
+		ul li:nth-child(1) {
+			-webkit-transform: rotate(22.5deg);
+			transform: rotate(22.5deg);
+		}
+
+		ul li:nth-child(2) {
+			-webkit-transform: rotate(67.5deg);
+			transform: rotate(67.5deg);
+		}
+
+		ul li:nth-child(3) {
+			-webkit-transform: rotate(112.5deg);
+			transform: rotate(112.5deg);
+		}
+
+		ul li:nth-child(4) {
+			-webkit-transform: rotate(157.5deg);
+			transform: rotate(157.5deg);
+		}
+
+		ul li:nth-child(5) {
+			-webkit-transform: rotate(-157.5deg);
+			transform: rotate(-157.5deg);
+		}
+
+		ul li:nth-child(6) {
+			-webkit-transform: rotate(-112.5deg);
+			transform: rotate(-112.5deg);
+		}
+
+		ul li:nth-child(7) {
+			-webkit-transform: rotate(-67.5deg);
+			transform: rotate(-67.5deg);
+		}
+
+		ul li:nth-child(8) {
+			-webkit-transform: rotate(-22.5deg);
+			transform: rotate(-22.5deg);
+		}
+
+		p {
+			margin-top: 20px;
+			font-size: 17px;
+		}
+
+		img {
+			width: 50px;
+			height: 50px;
+			margin-top: 20px;
+		}
+
+		.start {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 110px;
+			height: 120px;
+			margin-top: -67px;
+			margin-left: -55px;
+			background-image: url("../public/img/lottery-btn.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: 50% 50%;
+			cursor: pointer;
+		}
+
+		.lottery-logs {
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 200px;
+			background-color: rgba(0, 0, 0, .1);
+			overflow-y: auto;
+		}
+
+		ol {
+			padding: 20px 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="turntable">
+		<ul>
+			<li>
+				<p>感谢参与1</p>
+				<img src="../public/img/1.png" alt="1" />
+			</li>
+			<li>
+				<p>感谢参与2</p>
+				<img src="../public/img/2.png" alt="2" />
+			</li>
+			<li>
+				<p>感谢参与3</p>
+				<img src="../public/img/3.png" alt="3" />
+			</li>
+			<li>
+				<p>感谢参与4</p>
+				<img src="../public/img/4.png" alt="4" />
+			</li>
+			<li>
+				<p>感谢参与5</p>
+				<img src="../public/img/5.png" alt="5" />
+			</li>
+			<li>
+				<p>感谢参与6</p>
+				<img src="../public/img/6.png" alt="6" />
+			</li>
+			<li>
+				<p>感谢参与7</p>
+				<img src="../public/img/7.png" alt="7" />
+			</li>
+			<li>
+				<p>感谢参与8</p>
+				<img src="../public/img/8.png" alt="8" />
+			</li>
+		</ul>
+		<div class="start"></div>
+	</div>
+	<div class="lottery-logs">
+		<ol>Logs: </ol>
+	</div>
+	<script src="../public/js/jQuery-2.1.4.js"></script>
+	<script src="../public/js/jQueryRotate-2.3.js"></script>
+	<script>
+		$(function() {
+			var lottering = false;
+			var angle;
+
+			$('.start').click(function() {
+				if (!lottering) {
+					lottering = true;
+					angle = Math.ceil(Math.random() * 26) + 9;
+
+					// 模拟调用后端接口
+					getLotteryResult();
+					// 让转盘转一会
+					loadRotate();
+				}
+			});
+
+			var lotteryResult, hasRotate = false;
+			function getLotteryResult() {
+				if (!hasRotate) {
+					// 模拟接口所消耗时间
+					var interfaceCallTime = ((Math.random() * 3).toFixed(3)) * 1000;
+
+					hasRotate = true;
+
+					setTimeout(function() {
+						lotteryResult = Math.ceil(Math.random() * 8);
+						$('ol').append('<li>抽到奖品 ' + lotteryResult + '</li>');
+						
+						angle += lotteryResult * -45;
+					}, interfaceCallTime);
+				}
+			}
+
+			// 让转盘转一会
+			function loadRotate() {
+				$('ul').rotate({
+					angle: 0,
+					duration: 1000,
+					animateTo: 1080,
+					easing: function(x, t, b, c, d) {
+						// 匀速转动
+						return c * (t / d) + b;
+					},
+					callback: function() {
+						if (lotteryResult) {
+							lotteryRotate();
+						} else {
+							loadRotate();
+						}
+					}
+				});
+			}
+
+			// 显示大转盘抽奖结果
+			function lotteryRotate() {
+				$('ul').rotate({
+					angle: 0,
+					duration: 4000,
+					animateTo: 1080 + angle,
+					easing: function(x, t, b, c, d) {
+						// 先快后慢 (默认)
+						return -c * ((t = t / d - 1) * t * t * t - 1) + b;
+					},
+					callback: function() {
+						hasRotate = false;
+						lottering = false;
+						lotteryResult = null;
+					}
+				});
+			}
+		});
+	</script>
+</body>
+</html>
