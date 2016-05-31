@@ -5,4 +5,4 @@
 
 Resources
 ---
-- 轮播
+- 轮播图：Swiper OwlCarousel
