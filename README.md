@@ -2,3 +2,7 @@
 ---
 [瞅一瞅][1]
 [1]:http://monine.github.io/study
+
+Resources
+---
+- 轮播
