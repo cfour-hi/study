@@ -11,3 +11,5 @@
 ---
 - [个人修行][article__personal]
   [article__personal]:https://github.com/Monine/study/issues/1
+- [编程蓝海][program__blue-ocean]
+  [program__blue-ocean]:https://github.com/Monine/study/issues/2
