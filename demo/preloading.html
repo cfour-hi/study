@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片预加载</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		nav {
+			box-sizing: border-box;
+			width: 300px;
+			padding: 10px;
+			text-align: center;
+		}
+
+		a {
+			display: inline-block;
+			width: 50px;
+			height: 30px;
+			margin: 0 10px;
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		a:hover {
+			color: #4a4;
+		}
+
+		a.active {
+			color: #4a4;
+			border-bottom: 2px solid #4a4;
+		}
+
+		li {
+			display: none;
+			list-style: none;
+			width: 300px;
+			height: 500px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		li.active {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a class="active" href="javascript:void(0);">city</a>
+		<a href="javascript:void(0);">river</a>
+		<a href="javascript:void(0);">street</a>
+	</nav>
+	<ul>
+		<li class="active"><img src="img/city.jpg"></li>
+		<li><img data-src="img/river.jpg"></li>
+		<li><img data-src="img/street.jpg"></li>
+	</ul>
+	<script src=../public/js/jQuery-2.1.4.js></script>
+	<script>
+		$(function() {
+			$('nav a').on({
+				mouseover: function() {
+					var index = $(this).index();
+					var $img = $('ul li').eq(index).find('img');
+					var imgSrc = $img.attr('data-src');
+
+					$img.attr('src', imgSrc);
+					$img.removeAttr('data-src');
+				},
+				click: function() {
+					var index = $(this).index();
+
+					$('nav a, ul li').removeClass('active');
+					$('nav a').eq(index).addClass('active');
+					$('ul li').eq(index).addClass('active');
+				}
+			})
+		});
+	</script>
+</body>
+</html>
