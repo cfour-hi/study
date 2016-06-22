@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Writing Mode</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		.verticle-mode {
+			width: 200px;
+			height: 200px;
+			writing-mode: tb-rl;
+			-webkit-writing-mode: vertical-rl;
+							writing-mode: vertical-rl;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		h4 {
+			margin: 0 auto;
+			line-height: 2;
+			text-indent: -1em;
+		}
+
+		p {
+			line-height: 1.7;
+		}
+
+		.bg-box {
+			width: 500px;
+			height: 500px;
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div class="verticle-mode">
+		<h4>咏柳</h4>
+		<p>碧玉妆成一树高，<br>万条垂下绿丝绦。<br>不知细叶谁裁出，<br>二月春风似剪刀。</p>
+	</div>
+	<div class="bg-box verticle-mode">
+		<img src="img/city.jpg" width="200" height="200">
+	</div>
+</body>
+</html>
