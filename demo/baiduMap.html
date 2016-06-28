@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度地图 Demo</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		.bd-map {
+			width: 100%;
+			height: 100%;
+		}
+
+		.map-search {
+			position: fixed;
+			top: 5%;
+			left: 5%;
+		}
+
+		.map-search__detail-add {
+			width: 300px;
+			height: 30px;
+		}
+
+		.map-search__submit-btn {
+			width: 100px;
+			height: 32px;
+			border: none;
+			font-size: 14px;
+			color: #fff;
+			background-color: #8be;
+		}
+
+		.map-search__result {
+			width: 304px;
+		}
+	</style>
+</head>
+<body>
+	<div class="bd-map" id="bdMap"></div>
+	<div class="map-search">
+		<input class="map-search__detail-add" type="text">
+		<button class="map-search__submit-btn" type="button">搜索</button>
+		<div class="map-search__result" id="bdMapSearchResult"></div>
+	</div>
+	<script>
+		var BdMap = function() {
+			this.map = new BMap.Map('bdMap');
+			this.myCity = new BMap.LocalCity();
+			this.myGeo = new BMap.Geocoder();
+
+			this.myCityName = null;
+			this.point = null;
+		}
+
+		BdMap.prototype.init = function() {
+			var _this = this;
+
+			// 添加控件
+			this.map.addControl(new BMap.NavigationControl());
+			this.map.addControl(new BMap.ScaleControl());
+			// this.map.addControl(new BMap.OverviewMapControl());
+			this.map.addControl(new BMap.MapTypeControl());
+
+			// 开启地图相关功能
+			this.map.enableScrollWheelZoom();
+
+			// 初始化地图
+			this.myCity.get(function(result) {
+				_this.myCityName = result.name;
+
+				_this.myGeo.getPoint(_this.myCityName, function(point) {
+					if (point) {
+						_this.point = point;
+						_this.map.centerAndZoom(_this.point, 16);
+						_this.map.addOverlay(new BMap.Marker(_this.point));
+					}
+				});
+			});
+
+			/*this.map.addEventListener('click', function(e){
+				_this.updateMap(e.point);
+			});*/
+		}
+
+		/*BdMap.prototype.updateMap = function(point) {
+			this.point = point;
+
+			this.map.clearOverlays();
+			this.map.addOverlay(new BMap.Marker(this.point));
+		}*/
+
+		// 百度地图API加载完成回调函数
+		function initialize() {
+			var bdMap = new BdMap();
+			bdMap.init();
+
+			// 搜索
+			document.querySelector('.map-search__submit-btn').onclick = function() {
+				var local = new BMap.LocalSearch(bdMap.map, {
+					renderOptions: {
+						map: bdMap.map,
+						panel: 'bdMapSearchResult'
+					},
+					pageCapacity: 10,
+					onSearchComplete: function() {
+						bdMap.map.clearOverlays();
+					}
+				});
+				local.search(document.querySelector('.map-search__detail-add').value);
+			}
+		}
+   
+		// 异步加载百度地图API
+		function loadBdMapAPI() {
+		  var script = document.createElement("script");
+		  script.src = "http://api.map.baidu.com/api?v=2.0&ak=EOo2wNrZGNmPwENhIRpMikK1SMAdl0mu&callback=initialize";  //此为v2.0版本的引用方式
+		  // http://api.map.baidu.com/api?v=1.4&ak=您的密钥&callback=initialize";  //此为v1.4版本及以前版本的引用方式
+		  document.body.appendChild(script);
+		}
+
+		window.onload = loadBdMapAPI;
+	</script>
+</body>
+</html>
