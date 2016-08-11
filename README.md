@@ -21,7 +21,7 @@
 #### [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)
 
 - [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com/)
-- [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+- [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 
 阮大神的文章是我目前为止见过写的最通俗易懂的
 
@@ -32,3 +32,5 @@
 Javascript 和 Git 的教程非常值得一看
 
 #### [张鑫旭的个人博客](http://www.zhangxinxu.com/wordpress/)
+
+张大神对 CSS 的造诣在国内已经算是登峰造极
