@@ -10,10 +10,18 @@
 
 [瞅一瞅](http://monine.github.io/study)
 
-## 前端学习站点
+## 前端索引
 
 #### [Device metrics - Google Design](https://design.google.com/devices/)
 
 > A comprehensive design guide for sizing and resolutions across all devices.
 
 作为一枚前端，咱需要了解到的设备大小和分辨率
+
+#### [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)
+
+#### [廖雪峰的官方网站](http://www.liaoxuefeng.com/)
+
+> 研究互联网产品和技术，提供原创中文精品教程
+
+#### [张鑫旭的个人博客](http://www.zhangxinxu.com/wordpress/)
