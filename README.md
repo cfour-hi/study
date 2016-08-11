@@ -1,4 +1,4 @@
-#前端学习
+# 前端学习
 
 作为一枚前端，你是否还记得有枚歪果仁（妹纸）[180 天做 180 个网页](https://jenniferdewalt.com/index.html)。
 
@@ -10,7 +10,7 @@
 
 [瞅一瞅](http://monine.github.io/study)
 
-## 前端资源集
+## 前端学习站点
 
 #### [Device metrics - Google Design](https://design.google.com/devices/)
 
