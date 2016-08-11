@@ -20,6 +20,9 @@
 
 #### [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)
 
+- [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com/)
+- [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+
 阮大神的文章是我目前为止见过写的最通俗易懂的
 
 #### [廖雪峰的官方网站](http://www.liaoxuefeng.com/)
