@@ -20,8 +20,12 @@
 
 #### [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)
 
+阮大神的文章是我目前为止见过写的最通俗易懂的
+
 #### [廖雪峰的官方网站](http://www.liaoxuefeng.com/)
 
 > 研究互联网产品和技术，提供原创中文精品教程
+
+Javascript 和 Git 的教程非常值得一看
 
 #### [张鑫旭的个人博客](http://www.zhangxinxu.com/wordpress/)
