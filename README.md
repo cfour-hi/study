@@ -2,7 +2,7 @@
 
 作为一枚前端，你是否还记得有枚歪果仁（妹纸）[180 天做 180 个网页](https://jenniferdewalt.com/index.html)。
 
-她叫 Jennifer Dewalt，接触前端之初，我就是模仿着她来学习的。
+她叫 [Jennifer Dewalt](https://github.com/jendewalt/jennifer_dewalt)，接触前端之初，我就是模仿着她来学习的。
 
 前面一些网页还好，越到后面，涉及到的知识对刚刚接触到前端的我而言越是举步维艰。
 
