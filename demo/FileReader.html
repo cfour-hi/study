@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FileReader</title>
+</head>
+<body>
+	<input class="file-reader-input" type="file" multiple="">
+	<div class="preview-files"></div>
+	<script>
+		function previewFiles(event, imgs, idx) {
+			var files = imgs || this.files || event.target.files;
+			var index = idx || 0;
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				document.querySelector('.preview-files').innerHTML += '<img src="' + event.target.result + '">';
+
+				if ((index += 1) < files.length) previewFiles(event, files, index);
+			}
+			reader.readAsDataURL(files[index]);
+		}
+
+		document.querySelector('.file-reader-input').addEventListener('change', previewFiles, false);
+	</script>
+</body>
+</html>
