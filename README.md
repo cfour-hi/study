@@ -35,6 +35,6 @@ Javascript 和 Git 的教程非常值得一看
 
 作为一枚前端，咱需要了解到的设备大小和分辨率
 
-#### [The Elements of HTML](https://rawgit.com/w3c/elements-of-html/master/index.html#toc-w/)、
+#### [The Elements of HTML](https://rawgit.com/w3c/elements-of-html/master/index.html#toc-w/)
 
-suoyou
+HTML 标签的出生日期
