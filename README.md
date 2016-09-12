@@ -12,12 +12,6 @@
 
 ## 前端索引
 
-#### [Device metrics - Google Design](https://design.google.com/devices/)
-
-> A comprehensive design guide for sizing and resolutions across all devices.
-
-作为一枚前端，咱需要了解到的设备大小和分辨率
-
 #### [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)
 
 - [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com/)
@@ -34,3 +28,13 @@ Javascript 和 Git 的教程非常值得一看
 #### [张鑫旭的个人博客](http://www.zhangxinxu.com/wordpress/)
 
 张大神对 CSS 的造诣在国内已经算是登峰造极
+
+#### [Device metrics - Google Design](https://design.google.com/devices/)
+
+> A comprehensive design guide for sizing and resolutions across all devices.
+
+作为一枚前端，咱需要了解到的设备大小和分辨率
+
+#### [The Elements of HTML](https://rawgit.com/w3c/elements-of-html/master/index.html#toc-w/)、
+
+suoyou
