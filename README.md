@@ -38,3 +38,9 @@ Javascript 和 Git 的教程非常值得一看
 #### [The Elements of HTML](https://rawgit.com/w3c/elements-of-html/master/index.html#toc-w/)
 
 HTML 标签的出生日期
+
+#### [browser-logos](https://github.com/alrra/browser-logos/)
+
+> High resolution web browser logos
+
+所有浏览器各种尺寸的 logo，无论是主流还是非主流的浏览器。
