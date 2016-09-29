@@ -47,4 +47,6 @@ HTML 标签的出生日期
 
 #### [Ant Design](http://ant.design/)
 
-> 超级棒的 UI 设计语言
+> 一个 UI 设计语言
+
+拥有超级棒的 UI 设计理念和非常完善的 UI 库
