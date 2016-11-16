@@ -69,14 +69,13 @@ h3 {
 
 .bouncing {
 	animation: bouncing 12s infinite;
-	-webkit-animation: bouncing 12s infinite;
 }
 
 .clear {
 	clear: both;
 }
 
-@-webkit-keyframes bouncing {
+@keyframes bouncing {
 	0%, 25%, 50%, 75%, 100% {margin-top: 0; -webkit-animation-timing-function: ease-in;}
 	11%, 36%, 61%, 86% {width: 120px;}
 	12%, 37%, 62%, 87% {margin-top: 500px; width: 135px; -webkit-animation-timing-function: ease-out;}
