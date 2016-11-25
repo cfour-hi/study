@@ -53,6 +53,7 @@
 	</style>
 </head>
 <body>
+	<p>可打开开发者工具 console 查看预加载情况</p>
 	<nav>
 		<a class="active" href="javascript:void(0);">city</a>
 		<a href="javascript:void(0);">river</a>
@@ -74,6 +75,8 @@
 
 					$img.attr('src', imgSrc);
 					$img.removeAttr('data-src');
+
+					console.log('已经预加载：' + imgSrc);
 				},
 				click: function() {
 					var index = $(this).index();

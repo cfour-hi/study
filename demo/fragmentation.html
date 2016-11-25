@@ -38,6 +38,9 @@
 	</style>
 </head>
 <body>
+	<p>NOTE：</p>
+	<p>1、被碎片化的图片必须 position 定位</p>
+	<p>2、被碎片化的 dom 元素会被删除后重新生成</p>
 	<div class="active">
 		<img class="street clip" src="img/street.jpg">
 	</div>
@@ -50,10 +53,6 @@
 		document.querySelector('.active').onclick = function() {
 			clipPath(document.querySelector('.street'));
 		}
-
-		// NOTE：
-		// 1、被碎片化的图片必须 position 定位
-		// 2、被碎片化的 dom 元素会被删除后重新生成
 	</script>
 </body>
 </html>
