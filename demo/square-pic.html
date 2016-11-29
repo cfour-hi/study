@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 375px; height: 667px;
+      padding: 0 10px;
+      border: 1px solid #000;
+    }
+    .pic-wrap {
+      float: left;
+      position: relative;
+      width: 30%;
+      padding-top: 30%;
+      margin-top: 10px;
+      background: #eee;
+      overflow: hidden;
+    }
+    .pic-wrap:nth-child(3n-1) {
+      margin-left: 5%; margin-right: 5%;
+    }
+    .pic-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="pic-wrap">
+      <img src="img/street.jpg">
+    </div>
+    <div class="pic-wrap">
+      <img src="img/street.jpg">
+    </div>
+    <div class="pic-wrap">
+      <img src="img/street.jpg">
+    </div>
+    <div class="pic-wrap">
+      <img src="img/street.jpg">
+    </div>
+    <div class="pic-wrap">
+      <img src="img/street.jpg">
+    </div>
+    <div class="pic-wrap">
+      <img src="img/street.jpg">
+    </div>
+  </div>
+</body>
+</html>
