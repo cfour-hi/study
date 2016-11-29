@@ -23,8 +23,9 @@
     }
     .pic-wrap img {
       position: absolute;
-      top: 0; left: 0;
+      top: 50%; left: 50%;
       width: 100%;
+      transform: translate(-50%, -50%);
     }
   </style>
 </head>
@@ -40,14 +41,28 @@
       <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/991504fac70b5d887888060d6b045362b986b26bf6a02d990761244a7710b4e0117ed6216befe624e52577e42149345f?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=street.jpg&size=1024*1024">
     </div>
     <div class="pic-wrap">
-      <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/ad8e75056192b9d3bc9b6f0cb769dbca8e9b9b32317e4ea5d5da085c3c54b6d802bf1cfefc1584812fdc7493b58bd39e?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=city.jpg&size=1024*1024">
+      <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/cd4f472c0ebb371579abe708de883e4f401defd05295808b55097069ae0d47705a8145da870ed817ea3e0123691442dd?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=iceland3.jpg&size=1024*1024">
     </div>
     <div class="pic-wrap">
-      <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/ae637424f1ea08b673490e2221d167f4ba057ae12a9725ff92845823c5b6ac8ef75735333a1fd22904ee88cea24e317a?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=river.jpg&size=1024*1024">
+      <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/8ad9882424c1b2ca02ffe38ceda45c2b200230d454533282918199956c7ca1afc67dd812296431d1b1f85e385b99192a?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=iceland2.jpg&size=1024*1024">
     </div>
     <div class="pic-wrap">
-      <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/991504fac70b5d887888060d6b045362b986b26bf6a02d990761244a7710b4e0117ed6216befe624e52577e42149345f?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=street.jpg&size=1024*1024">
+      <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/8467ed54dbb0da8b0815316131e34864bf99329f8148cf866e926e0329d3928dae1b0c406ebaa7ac50a728889396126f?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=iceland1.jpg&size=1024*1024">
     </div>
   </div>
+  <script>
+    ;(function() {
+      var imgs = document.getElementsByTagName('img');
+      [].forEach.call(imgs, function(elem) {
+        var img = elem;
+        img.onload = function() {
+          if (img.width > img.height) {
+            img.style.height = '100%';
+            img.style.width = 'auto';
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
