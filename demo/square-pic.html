@@ -16,16 +16,15 @@
       padding-top: 30%;
       margin-top: 10px;
       background: #eee;
-      overflow: hidden;
     }
     .pic-wrap:nth-child(3n-1) {
       margin-left: 5%; margin-right: 5%;
     }
     .pic-wrap img {
       position: absolute;
-      top: 50%; left: 50%;
-      width: 100%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -50,19 +49,5 @@
       <img src="https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/8467ed54dbb0da8b0815316131e34864bf99329f8148cf866e926e0329d3928dae1b0c406ebaa7ac50a728889396126f?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=iceland1.jpg&size=1024*1024">
     </div>
   </div>
-  <script>
-    ;(function() {
-      var imgs = document.getElementsByTagName('img');
-      [].forEach.call(imgs, function(elem) {
-        var img = elem;
-        img.onload = function() {
-          if (img.width > img.height) {
-            img.style.height = '100%';
-            img.style.width = 'auto';
-          }
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
