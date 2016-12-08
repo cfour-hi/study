@@ -1,9 +1,10 @@
 /**
- * getQueryString() 获取 URL querystring 中的参数
- *   [EN] => getQueryString() get param from URL querystring
+ * 获取 URL querystring 中的参数
+ * get param from URL querystring
  *
- * @param {String} name (如不传则返回所有查询对象)
- *   [EN] => @param {String} name (return all query objects when not has value)
+ * @[param] {String} name
+ * 如不传则返回所有查询对象
+ * return all query objects when not has value
  *
  * @return {Null || String || Object} 
  */
