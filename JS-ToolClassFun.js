@@ -8,7 +8,7 @@
  *
  * @return {Null || String || Object} 
  */
-var getQueryString = function(name) {
+var getUrlQueryStr = function(name) {
   var querystring = location.search;
   var param = {};
   var kvs = null;
@@ -25,4 +25,29 @@ var getQueryString = function(name) {
   });
 
   return (name ? param[name] : param);
+};
+
+
+
+/**
+ * 获取字符串字符长度
+ * get string char code length
+ *
+ * @param {String} str
+ * 
+ * @return {Number} strLen
+ */
+var getStrCharCodeLen = function(str) {
+  var strLen = 0;
+  [].forEach.call(str, function(elem, index, arr) {
+    var charCode = elem.charCodeAt(0);
+    if (charCode < 0x007f) {
+      strLen += 1;
+    } else if ((0x0080 <= charCode) && (charCode <= 0x07ff)) {
+      strLen += 2;
+    } else if ((0x0800 <= charCode) && (charCode <= 0xffff)) {
+      strLen += 3;
+    }
+  });
+  return strLen;
 };
