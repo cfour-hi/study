@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .nav-tab {
+      width: 100%; height: 30px;
+    }
+    .nav-tab dd {
+      float: left;
+      position: relative;
+      width: 100px; height: 30px;
+      margin: 0 25px 0 0;
+      text-align: center;
+      color: #0097da;
+      background: #0097da;
+    }
+    .nav-tab dd:hover {
+      color: #f60;
+      background: #f60;
+    }
+    .nav-tab dd:before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      border-top: 15px solid currentColor;
+      border-right: 0 solid currentColor;
+      border-bottom: 15px solid currentColor;
+      border-left: 15px solid transparent;
+    }
+    .nav-tab dd:after {
+      content: '';
+      position: absolute;
+      right: -15px;
+      width: 0; height: 0;
+      border-top: 15px solid transparent;
+      border-left: 15px solid currentColor;
+      border-bottom: 15px solid transparent;
+    }
+    .nav-tab dd:first-child {
+      border-radius: 7px 0 0 7px;
+    }
+    .nav-tab dd:first-child:before {
+      content: none;
+    }
+    .nav-tab dd:last-child {
+      border-radius: 0 7px 7px 0;
+    }
+    .nav-tab dd:last-child:after {
+      content: none;
+    }
+    .nav-tab dd a {
+      display: inline-block;
+      width: 100%; height: 100%;
+      line-height: 30px;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <dl class="nav-tab">
+    <dd><a href="#">Home</a></dd>
+    <dd><a href="#">About</a></dd>
+    <dd><a href="#">Info</a></dd>
+    <dd><a href="#">Contact</a></dd>
+    <dd><a href="#">Some</a></dd>
+  </dl>
+</body>
+</html>
