@@ -6,7 +6,7 @@
  * 如不传则返回所有查询对象
  * return all query objects when not has value
  *
- * @return {Null || String || Object} 
+ * @return {Null || String || Object}
  */
 var getUrlQueryStr = function(name) {
   var querystring = location.search;
@@ -34,7 +34,7 @@ var getUrlQueryStr = function(name) {
  * get string char code length
  *
  * @param {String} str
- * 
+ *
  * @return {Number} strLen
  */
 var getStrCharCodeLen = function(str) {
@@ -51,3 +51,23 @@ var getStrCharCodeLen = function(str) {
   });
   return strLen;
 };
+
+
+
+/*＊
+＊ 普通数字替换为金额数字
+*
+* @param {Number} num
+*
+* return {String} num
+*/
+var getGroupNum = function(num) {
+  num = num + '';
+  var splitNum = num.split('.');
+  var integer = splitNum[0];
+  var rgx = /(\d+)(\d{3})/;
+  while (rgx.test(integer)) {
+    integer = integer.replace(rgx, '$1,$2');
+  }
+  return integer + '.' + splitNum[1];
+}
