@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>overscroll - prevents the scroll from "passing through" to the body</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        html, body {height: 100%; margin: 0;}
+        .bg-placeholder {height: 100%; padding-top: 10px; font-size: 14px; text-align: center; color: #999; background-color: #2e3132;}
+        .scroll-view {position: absolute; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; -webkit-overflow-scrolling: touch;}
+        .scroll-view__content {min-height: 100%; background-color: #fff; overflow: hidden;}
+    </style>
+</head>
+<body>
+    <div class="bg-placeholder">网页由 [草榴社区] 提供</div>
+	<div class="scroll-view">
+	    <div id="content" class="scroll-view__content">
+            <h1>overscroll - prevents the scroll from "passing through" to the body</h1>
+            <p><strong>往下拉一下页面试一试   Don't be evil!!!</strong></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatum delectus assumenda repudiandae, illum tenetur quasi inventore atque architecto impedit veniam dolores, quibusdam earum, molestias natus necessitatibus magni, nulla placeat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatum delectus assumenda repudiandae, illum tenetur quasi inventore atque architecto impedit veniam dolores, quibusdam earum, molestias natus necessitatibus magni, nulla placeat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatum delectus assumenda repudiandae, illum tenetur quasi inventore atque architecto impedit veniam dolores, quibusdam earum, molestias natus necessitatibus magni, nulla placeat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatum delectus assumenda repudiandae, illum tenetur quasi inventore atque architecto impedit veniam dolores, quibusdam earum, molestias natus necessitatibus magni, nulla placeat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatum delectus assumenda repudiandae, illum tenetur quasi inventore atque architecto impedit veniam dolores, quibusdam earum, molestias natus necessitatibus magni, nulla placeat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatum delectus assumenda repudiandae, illum tenetur quasi inventore atque architecto impedit veniam dolores, quibusdam earum, molestias natus necessitatibus magni, nulla placeat.</p>
+	    </div>
+    </div>
+    <script>
+        var overscroll = function(el) {
+            el.addEventListener('touchstart', function() {
+                var top = el.scrollTop;
+                var totalScroll = el.scrollHeight
+                var currentScroll = top + el.offsetHeight
+                // If we're at the top or the bottom of the containers
+                // scroll, push up or down one pixel.
+                // this prevents the scroll from "passing through" to the body.
+                if(top === 0) {
+                    el.scrollTop = 1;
+                } else if(currentScroll === totalScroll) {
+                    el.scrollTop = top - 1;
+                }
+            });
+            // 如果内容区域(.scroll-view__content)不足以滚动, 那么必须阻止滚动
+            el.addEventListener('touchmove', function(evt) {
+                // if the content is actually scrollable, i.e. the content is long enough
+                // that scrolling can occur
+                if (el.offsetHeight >= el.scrollHeight) { // 不足以滚动
+                    evt.preventDefault();
+                }
+            });
+        };
+        overscroll(document.querySelector('.scroll-view'));
+    </script>
+</body>
+</html>
