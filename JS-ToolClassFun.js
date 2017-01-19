@@ -1,11 +1,13 @@
 /**
  * 获取 URL querystring 中的参数
  * get param from URL querystring
+ * 默认返回所有查询对象
+ * return all query objects by default
  *
  * @[param] {String} name
  * 如不传则返回所有查询对象
  * return all query objects when not has value
- *
+ * @param {String} name
  * @return {Null || String || Object}
  */
 var getUrlQueryStr = function(name) {
@@ -27,14 +29,11 @@ var getUrlQueryStr = function(name) {
   return (name ? param[name] : param);
 };
 
-
-
 /**
  * 获取字符串字符长度
- * get string char code length
+ * get the character string length
  *
  * @param {String} str
- *
  * @return {Number} strLen
  */
 var getStrCharCodeLen = function(str) {
@@ -52,13 +51,10 @@ var getStrCharCodeLen = function(str) {
   return strLen;
 };
 
-
-
 /*＊
 ＊ 普通数字替换为金额数字
 *
 * @param {Number} num
-*
 * return {String} num
 */
 var getGroupNum = function(num) {
@@ -71,3 +67,23 @@ var getGroupNum = function(num) {
   }
   return integer + '.' + splitNum[1];
 }
+
+/**
+* 获取格式化后的日期
+* get the formatted date
+* 默认返回以 '-' 为分隔符的今天日期
+* return today's date with '-' as the delimiter by default
+*
+* @param {Date} date
+* @param {String} delimiter
+* @return {String}
+*/
+var getFormatDate = function(date, delimiter) {
+  date = date ? new Date(date) : new Date();
+  if (!delimiter) delimiter = '-';
+
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  var d = date.getDate();
+  return [y, m, d].join(delimiter);
+};
