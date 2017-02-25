@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义checkbox， radio样式</title>
+  <style>
+    .use-backgroud-image label {
+      display: inline-block;
+      width: 20px; height: 20px;
+      background-image: url(http://p1.bqimg.com/567571/99322cf8c3283e42.png);
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    .use-backgroud-image input {
+      display: none;
+    }
+    .use-backgroud-image .radio-label {
+      background-position: -22px -8px;
+    }
+    .use-backgroud-image .radio-input:checked + .radio-label {
+      background-position: -57px -8px;
+    }
+    .use-backgroud-image .checkbox-label {
+      background-position: -22px -30px;
+    }
+    .use-backgroud-image .checkbox-input:checked + .checkbox-label {
+      background-position: -57px -30px;
+    }
+
+    .use-pseudo-el input {
+      display: none;
+    }
+    .use-pseudo-el .radio-label {
+      display: inline-block;
+      position: relative;
+      width: 20px; height: 20px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .use-pseudo-el .radio-input:checked + .radio-label {
+      border-color: #d63e36;
+    }
+    .use-pseudo-el .radio-input:checked + .radio-label::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 6px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background-color: #d63e36;
+    }
+    .use-pseudo-el .checkbox-label {
+      display: inline-block;
+      position: relative;
+      width: 20px; height: 20px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .use-pseudo-el .checkbox-input:checked + .checkbox-label {
+      border-color: #d63e36;
+    }
+    .use-pseudo-el .checkbox-input:checked + .checkbox-label::before {
+      content: '';
+      position: absolute;
+      top: 13px; left: 3px;
+      width: 8px; height: 3px;
+      background-color: #d63e36;
+      -webkit-transform-origin: 100% 0;
+              transform-origin: 100% 0;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    .use-pseudo-el .checkbox-input:checked + .checkbox-label::after {
+      content: '';
+      position: absolute;
+      top: 4px; left: 7px;
+      width: 3px; height: 10px;
+      background-color: #d63e36;
+      -webkit-transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="use-backgroud-image">
+    <h2>使用背景图</h2>
+    <input id="radio-bg" class="radio-input" type="radio">
+    <label class="radio-label" for="radio-bg"></label>
+    <input id="checkbox-bg" class="checkbox-input" type="checkbox">
+    <label class="checkbox-label" for="checkbox-bg"></label>
+  </div>
+  <div class="use-pseudo-el">
+    <h2>使用伪元素</h2>
+    <input id="radio-psudo" class="radio-input" type="radio">
+    <label class="radio-label" for="radio-psudo"></label>
+    <input id="checkbox-psudo" class="checkbox-input" type="checkbox">
+    <label class="checkbox-label" for="checkbox-psudo"></label>
+  </div>
+</body>
+</html>
