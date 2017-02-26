@@ -35,7 +35,10 @@ Observer.prototype.convert = function(key, val) {
 };
 
 var app1 = new Observer({
-  name: 'youngwind',
+  name: {
+    big: 'A',
+    small: 'a'
+  },
   age: 25
 });
 
