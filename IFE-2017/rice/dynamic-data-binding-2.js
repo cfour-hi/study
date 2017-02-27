@@ -10,11 +10,7 @@ Observer.prototype.walk = function(obj) {
   for (var key in obj) {
     if (obj.hasOwnProperty(key)) {
       val = obj[key];
-
-      if (typeof val === 'object') {
-        new Observer(val);
-      }
-
+      if (typeof val === 'object') new Observer(val);
       this.convert(key, val);
     }
   }
@@ -37,16 +33,20 @@ Observer.prototype.convert = function(key, val) {
       if (typeof newVal === 'object') new Observer(newVal);
 
       val = newVal;
-      self.$emit(key);
+      self.$emit(key, newVal);
     }
   })
 };
 
 Observer.prototype.$emit = function(key) {
   var handlerArgs = Array.prototype.slice.call(arguments, 1);
-  for (var i = 0; i < this.handlers[key].length; i++) {
-    this.handlers[key][i].apply(this, handlerArgs);
+
+  if (this.handlers[key] && this.handlers[key].length) {
+    for (var i = 0; i < this.handlers[key].length; i++) {
+      this.handlers[key][i].apply(this, handlerArgs);
+    }
   }
+
   return this;
 }
 
@@ -66,9 +66,11 @@ var app = new Observer({
 })
 
 app.data.a;
-app.data.d;
+app.data.a = 11;
+app.data.c.d;
+app.data.c.d = 33;
 
-let app1 = new Observer({
+var app1 = new Observer({
   name: 'youngwind',
   age: 25
 });
