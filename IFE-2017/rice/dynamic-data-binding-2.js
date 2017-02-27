@@ -1,5 +1,7 @@
 function Observer(data) {
   this.data = data;
+  this.handlers = {};
+
   this.walk(data);
 }
 
@@ -10,7 +12,7 @@ Observer.prototype.walk = function(obj) {
       val = obj[key];
 
       if (typeof val === 'object') {
-        this.walk(val);
+        new Observer(val);
       }
 
       this.convert(key, val);
@@ -19,6 +21,8 @@ Observer.prototype.walk = function(obj) {
 };
 
 Observer.prototype.convert = function(key, val) {
+  var self = this;
+
   Object.defineProperty(this.data, key, {
     enumerable: true,
     configurable: true,
@@ -28,28 +32,50 @@ Observer.prototype.convert = function(key, val) {
     },
     set: function(newVal) {
       console.log('你设置了 ' + key + '，新的值为 ' + newVal);
+
       if (newVal === val) return;
       if (typeof newVal === 'object') new Observer(newVal);
+
       val = newVal;
+      self.$emit(key);
     }
   })
 };
 
-var app1 = new Observer({
-  name: {
-    big: 'A',
-    small: 'a'
-  },
+Observer.prototype.$emit = function(key) {
+  var handlerArgs = Array.prototype.slice.call(arguments, 1);
+  for (var i = 0; i < this.handlers[key].length; i++) {
+    this.handlers[key][i].apply(this, handlerArgs);
+  }
+  return this;
+}
+
+Observer.prototype.$watch = function(key, callback) {
+  if (!(key in this.handlers)) this.handlers[key] = [];
+  this.handlers[key].push(callback);
+  return this;
+};
+
+var app = new Observer({
+  a: 1,
+  b: 2,
+  c: {
+   d: 3,
+   e: 4
+ }
+})
+
+app.data.a;
+app.data.d;
+
+let app1 = new Observer({
+  name: 'youngwind',
   age: 25
 });
 
-var app2 = new Observer({
-  university: 'bupt',
-  major: 'computer'
+// 你需要实现 $watch 这个 API
+app1.$watch('age', function(age) {
+  console.log(`我的年纪变了，现在已经是：${age}岁了`)
 });
 
-// 要实现的结果如下：
-app1.data.name; // 你访问了 name
-app1.data.age = 100;  // 你设置了 age，新的值为100
-app2.data.university; // 你访问了 university
-app2.data.major = 'science';  // 你设置了 major，新的值为 science
+app1.data.age = 100; // 输出：'我的年纪变了，现在已经是100岁了'
