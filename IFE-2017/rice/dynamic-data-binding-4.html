@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动态数据绑定（四）</title>
+</head>
+<body>
+  <div id="app">
+    <p>姓名：{{user.name}}</p>
+    <p>年龄：{{user.age}}</p>
+  </div>
+  <script>
+    function Vue(options) {
+      options.el = document.querySelector(options.el);
+      options.el.innerHTML = compile(options);
+    }
+
+    function compile(options) {
+      var regTag = /{{([^{}]+)}}/g;
+      var text = options.el.innerHTML.trim();
+      var match, arr, value;
+
+      while (match = regTag.exec(text)) {
+        arr = match[1].split('.');
+        for (var i = 0; i < arr.length; i++) {
+          value = value ? value[arr[i]] : options.data[arr[i]];
+        }
+        text = text.replace(match[0], value);
+        value = null;
+      }
+
+      return text;
+    }
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        user: {
+          name: 'youngwind',
+          age: 25
+        }
+      }
+    });
+  </script>
+</body>
+</html>
