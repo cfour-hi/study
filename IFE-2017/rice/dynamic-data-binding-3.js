@@ -1,8 +1,6 @@
 function Observer(data) {
   this.data = data;
   this.handlers = {};
-  this.watchList = [];
-  this.getterList = [];
 
   this.walk(data);
 }
@@ -13,44 +11,10 @@ Observer.prototype.walk = function(obj) {
     if (obj.hasOwnProperty(key)) {
       val = obj[key];
       if (typeof val === 'object') new Observer(val);
-      this.convert(key, val);
+
+      defineProp(this.data, key, val, this, key);
     }
   }
-};
-
-Observer.prototype.convert = function(key, val) {
-  var self = this;
-
-  Object.defineProperty(this.data, key, {
-    enumerable: true,
-    configurable: true,
-    get: function() {
-      console.log('你访问了 ' + key);
-
-      self.getterList.push(key);
-      return val;
-    },
-    set: function(newVal) {
-      console.log('你设置了 ' + key + '，新的值为 ' + newVal);
-
-      if (newVal === val) return;
-      if (typeof newVal === 'object') new Observer(newVal);
-
-      val = newVal;
-
-      if (self.watchList.indexOf(key) === -1) {
-        for (var i = self.getterList.length - 2; i >= 0; i--) {
-          if (self.watchList.indexOf(self.getterList[i])) {
-            self.$emit(key, newVal);
-          }
-        }
-      } else {
-        self.$emit(key, newVal);
-      }
-
-      self.getterList.length = 0;
-    }
-  })
 };
 
 Observer.prototype.$emit = function(key) {
@@ -65,20 +29,51 @@ Observer.prototype.$emit = function(key) {
   return this;
 }
 
-Observer.prototype.$watch = function(key, callback) {
-  if (this.watchList.indexOf(key) === -1) this.watchList.push(key);
+Observer.prototype.$watch = function(key, watcher) {
+  var keyObj = this.data[key];
+  var props = [];
+
+  for (var prop in keyObj) {
+    if (keyObj.hasOwnProperty(prop)) props.push(prop);
+  }
+
+  for (var i = 0; i < props.length; i++) {
+    var _key = props[i];
+    defineProp(keyObj, _key, keyObj[_key], this, key);
+  }
 
   if (!(key in this.handlers)) this.handlers[key] = [];
-  this.handlers[key].push(callback);
+  this.handlers[key].push(watcher);
   return this;
 };
 
-var app = new Observer({
-    name: {
-        firstName: 'shaofeng',
-        lastName: 'liang'
+function defineProp(obj, key, value, ctx, watchKey) {
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get: function() {
+      console.log('你访问了 ' + key);
+      return value;
     },
-    age: 25
+    set: function(newVal) {
+      console.log('你设置了 ' + key + '，新的值为 ' + newVal);
+
+      if (newVal === value) return;
+      value = newVal;
+
+      if (watchKey && ctx.handlers[watchKey] && ctx.handlers[watchKey].length) {
+        ctx.$emit(watchKey, newVal);
+      }
+    }
+  });
+}
+
+var app = new Observer({
+  name: {
+    firstName: 'shaofeng',
+    lastName: 'liang'
+  },
+  age: 25
 });
 
 app.$watch('name', function (newName) {

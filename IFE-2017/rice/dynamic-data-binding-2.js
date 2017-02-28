@@ -33,7 +33,7 @@ Observer.prototype.convert = function(key, val) {
       if (typeof newVal === 'object') new Observer(newVal);
 
       val = newVal;
-      self.$emit(key, newVal);
+      if (self.handlers[key]) self.$emit(key, newVal);
     }
   })
 };
