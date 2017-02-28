@@ -11,25 +11,40 @@
   </div>
   <script>
     function Vue(options) {
-      options.el = document.querySelector(options.el);
-      options.el.innerHTML = compile(options);
+      this.el = document.querySelector(options.el);
+      this.data = options.data;
+
+      deepChildren(this.el, this);
     }
 
-    function compile(options) {
+    function deepChildren(node, vm) {
+      var children = node.children;
+      if (children.length) {
+        for (var i = 0; i < children.length; i++) {
+          if (children[i].children.length) {
+            deepChildren(children[i], vm);
+          } else {
+            compile(children[i], vm);
+          }
+        }
+      }
+    }
+
+    function compile(node, vm) {
       var regTag = /{{([^{}]+)}}/g;
-      var text = options.el.innerHTML.trim();
+      var nodeText = node.textContent;
       var match, arr, value;
 
-      while (match = regTag.exec(text)) {
+      while (match = regTag.exec(nodeText)) {
+        value = vm.data;
         arr = match[1].split('.');
-        for (var i = 0; i < arr.length; i++) {
-          value = value ? value[arr[i]] : options.data[arr[i]];
-        }
-        text = text.replace(match[0], value);
-        value = null;
-      }
 
-      return text;
+        arr.forEach(function(key) {
+          value = value[key]
+        });
+
+        node.textContent = nodeText.replace(match[0], value);
+      }
     }
 
     var app = new Vue({
