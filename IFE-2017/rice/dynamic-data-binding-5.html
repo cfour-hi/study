@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>姓名：{{user.name}}</p>
+    <p>年龄：{{user.age}}</p>
+  </div>
+
+  <script id="Observer">
+    !(function () {
+      var uid = 0;
+
+      function Observer(value) {
+        this.value = value;
+        this.id = ++uid;
+
+        Object.defineProperty(value, '$observer', {
+          value: this,
+          enumerable: false,
+          writable: true,
+          configurable: true
+        });
+
+        this.walk(value);
+      }
+
+      Observer.prototype.walk = function (obj) {
+        var val;
+
+        for (var key in obj) {
+          if (!(obj.hasOwnProperty(key))) { return; }
+
+          val = obj[key];
+
+          this.observe(key, val);
+          this.convert(key, val);
+        }
+      };
+
+      Observer.prototype.observe = function (key, val) {
+        var ob = Observer.create(val);
+        if (!ob) { return; }
+        ob.parent = {
+          key: key,
+          ob: this
+        }
+      };
+
+      Observer.prototype.convert = function (key, val) {
+        var ob = this;
+        Object.defineProperties(this.value, key, {
+          enumerable: true,
+          configurable: true,
+          get: function () {
+            return val;
+          },
+          set: function (newVal) {
+            if (newVal === val) { return; }
+            val = newVal;
+            ob.notify('set', key, newVal);
+            ob.notify('set:' + key, key, newVal);
+          }
+        })
+      };
+
+      Observer.prototype.on = function (event, fn) {
+
+      };
+
+      Observer.prototype.create = function (value) {
+        if (typeof value === 'object') {
+          return new Observer(value);
+        }
+      };
+
+      window.Observer = Observer;
+    })();
+  </script>
+
+  <script id="Binding">
+    !(function () {
+      function Binding() {
+        this._subs = [];
+      }
+
+      Binding.prototype.
+
+      window.Binding = Binding;
+    })();
+  </script>
+
+  <script id="Vue">
+    !(function () {
+      function Vue(options) {
+        this.$options = options;
+        this.$data = options.data || {};
+
+        this._initData(options.data);
+        this._initBindings();
+      }
+
+      Vue.prototype._initDate = function (data) {
+        this.observer = Observer.create(data);
+      };
+
+      Vue.prototype._initBindings = function () {
+        this._rootBinding = new Binding();
+        this.observer.on('set', this._updateBindingAt.bind(this));
+      }
+
+      window.Vue = Vue;
+    })();
+  </script>
+</body>
+
+</html>
