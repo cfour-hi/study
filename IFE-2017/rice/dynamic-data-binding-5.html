@@ -12,6 +12,7 @@
   <div id="app">
     <p>姓名：{{user.name}}</p>
     <p>年龄：{{user.age}}</p>
+    <p>身高：{{height}}</p>
   </div>
 
   <script id="Observer">
@@ -20,8 +21,9 @@
 
       function Observer(value) {
         this.value = value;
-        this.id = ++uid;
+        this.id = ++uid; // 唯一标识
 
+        // 当前对象 $observer
         Object.defineProperty(value, '$observer', {
           value: this,
           enumerable: false,
@@ -45,18 +47,31 @@
         }
       };
 
+      // 如果 val 为对象则会递归创建对象的 Observer 并且添加 parent 对象
+      // 这里有个琢磨许久才弄明白的地方
+      // var ob 是当前作用域声明的变量
+      // 那 ob.parent 在此作用域之外是如何获取到值的？
+      // 答案是在 Observer 构造函数内定义了子对象的 $observer
+      // 它的 value 指向 this
+      // 构造函数返回的的就是子对象的 this
+      // 所以 ob === 子对象的 $observer
       Observer.prototype.observe = function (key, val) {
         var ob = Observer.create(val);
+
         if (!ob) { return; }
+
         ob.parent = {
           key: key,
           ob: this
         }
       };
 
+      // 重新定义变量
+      // 在变量发生改变时发出通知
       Observer.prototype.convert = function (key, val) {
         var ob = this;
-        Object.defineProperties(this.value, key, {
+
+        Object.defineProperty(this.value, key, {
           enumerable: true,
           configurable: true,
           get: function () {
@@ -65,17 +80,59 @@
           set: function (newVal) {
             if (newVal === val) { return; }
             val = newVal;
+
+            // 发出变量改变通知
             ob.notify('set', key, newVal);
             ob.notify('set:' + key, key, newVal);
           }
         })
       };
 
-      Observer.prototype.on = function (event, fn) {
+      // 通知事件
+      // 如果当前 ob 有父级 ob 递归向上发出通知
+      Observer.prototype.notify = function (event, path, val) {
+        this.emit(event, path, val);
 
+        var parent = this.parent;
+        if (!parent) { return; }
+
+        // 找到父级 ob 和变量 path
+        var ob = parent.ob;
+        var key = parent.key;
+        var parentPath = key + '.' + path;
+
+        // 向父级 ob 发出通知
+        ob.notify(event, parentPath, val);
       };
 
-      Observer.prototype.create = function (value) {
+      // 触发事件
+      Observer.prototype.emit = function (event, path, val) {
+        var self = this;
+        var args = arguments;
+
+        this._cbs = this._cbs || {};
+        var callbacks = this._cbs[event];
+
+        if (!callbacks) { return; }
+
+        callbacks = callbacks.slice(0);
+        callbacks.forEach(function (cb, i) {
+          callbacks[i].apply(self, args);
+        });
+      };
+
+      // 定义事件并添加事件回调
+      Observer.prototype.on = function (event, fn) {
+        this._cbs = this._cbs || {};
+        if (!this._cbs[event]) { this._cbs[event] = []; }
+        this._cbs[event].push(fn);
+
+        // 支持链式调用
+        return this;
+      };
+
+      // 针对对象（数组未写）创建 Observer
+      Observer.create = function (value) {
         if (typeof value === 'object') {
           return new Observer(value);
         }
@@ -91,7 +148,13 @@
         this._subs = [];
       }
 
-      Binding.prototype.
+      Binding.prototype._addSub = function (sub) {
+        this._subs.push(sub);
+      };
+
+      Binding.prototype._addChild = function (key) {
+        return this[key] || new Binding();
+      };
 
       window.Binding = Binding;
     })();
@@ -103,21 +166,272 @@
         this.$options = options;
         this.$data = options.data || {};
 
+        // 这里其实应该有更多的指令
+        this.$options.directives = {
+          text: {
+            update: update
+          }
+        };
+
+        // 给 data 添加 Observer
+        // data 内的所有子集对象也都添加 Observer
         this._initData(options.data);
+
+        // 给 data 添加 _rootBindingBinding
         this._initBindings();
+
+        this._directives = [];
+
+        if (options.el) {
+          this.$mount(options.el);
+        }
       }
 
-      Vue.prototype._initDate = function (data) {
+      Vue.prototype._initData = function (data) {
         this.observer = Observer.create(data);
       };
 
       Vue.prototype._initBindings = function () {
         this._rootBinding = new Binding();
+
+        // 定义更新 DOM 事件
+        // 变量改变之后会 notify 触发 set 事件
+        // 从而执行 cb => this._updateBindingAt.bind(this)
         this.observer.on('set', this._updateBindingAt.bind(this));
       }
 
+      Vue.prototype._updateBindingAt = function () {
+        var path = arguments[1];
+        var pathAry = path.split('.');
+        var r = this._rootBinding;
+
+        pathAry.forEach(function (key) {
+          r = r[key];
+        });
+
+        var subs = r._subs;
+        subs.forEach(function (watcher) {
+          watcher.cb.call(watcher);
+        });
+      };
+
+      Vue.prototype.$mount = function (el) {
+        this._initElement(el);
+        this._compile();
+      };
+
+      Vue.prototype._compile = function () {
+        this._compileNode(this.$el);
+      };
+
+      Vue.prototype._compileElement = function (node) {
+        if (node.hasChildNodes()) {
+          Array.prototype.forEach.apply(node.childNodes, [this._compileNode, this]);
+        }
+      };
+
+      Vue.prototype._compileTextNode = function (node) {
+        var self = this;
+        var tokens = textParser(node.nodeValue);
+        if (!tokens) { return; }
+
+        tokens.forEach(function (token) {
+          if (token.tag) {
+            // 指令节点
+            var value = token.value;
+            var el = document.createTextNode('');
+            _.before(el, node);
+            // 绑定更新 DOM 指令
+            self._bindDirective('text', value, el);
+          } else {
+            // 普通文本节点
+            var el = document.createTextNode(token.value);
+            _.before(el, node);
+          }
+        });
+
+        _.remove(node);
+      };
+
+      Vue.prototype._compileNode = function (node) {
+        switch (node.nodeType) {
+          case 1:
+            this._compileElement(node);
+            break;
+          case 3:
+            this._compileTextNode(node);
+            break;
+          default:
+            return;
+        }
+      };
+
+      Vue.prototype._bindDirective = function (name, value, node) {
+        var descriptor = { expression: value };
+        this._directives.push(new Directive(name, node, this, descriptor));
+      };
+
+      Vue.prototype._initElement = function (el) {
+        if (typeof el !== 'string') { return; }
+
+        var selector = el;
+        this.$el = el = document.querySelector(el);
+
+        if (!el) { console.warn('Cannot find element: ' + selector); }
+      };
+
+      Vue.prototype._createBindingAt = function (path) {
+        var b = this._rootBinding;
+        var pathAry = path.split('.');
+
+        for (var i = 0; i < pathAry.length; i++) {
+          var key = pathAry[i];
+          b = b[key] = b._addChild(key);
+        }
+
+        return b;
+      };
+
       window.Vue = Vue;
     })();
+  </script>
+
+  <script id="Directive">
+    !(function () {
+      function Directive(name, el, vm, descriptor) {
+        this.name = name;
+        this.el = el;
+        this.vm = vm;
+        this.expression = descriptor.expression;
+        this.attr = 'nodeValue';
+
+        this._initDef();
+        this._bind();
+      }
+
+      // 添加 text update
+      // this.update = update
+      Directive.prototype._initDef = function () {
+        var def = this.vm.$options.directives[this.name];
+        _.extend(this, def);
+      };
+
+      // 添加 watcher
+      Directive.prototype._bind = function () {
+        if (!this.expression) { return; }
+
+        this._watcher = new Watcher(
+          this.vm,
+          this.expression,
+          this._update,
+          this
+        );
+
+        this.update();
+      };
+
+      Directive.prototype._update = function () {
+        this.update();
+      };
+
+      window.Directive = Directive;
+    })();
+  </script>
+
+  <script id="Watcher">
+    !(function () {
+      function Watcher(vm, expression, cb, ctx) {
+        this.vm = vm;
+        this.expression = expression;
+        this.cb = cb;
+        this.ctx = ctx || vm;
+
+        this.addDep(expression);
+      }
+
+      Watcher.prototype.addDep = function (path) {
+        var vm = this.vm;
+        var binding = vm._createBindingAt(path);
+        binding._addSub(this);
+      };
+
+      Watcher.prototype.update = function () {
+        this.cb.call(this.ctx, arguments);
+      };
+
+      window.Watcher = Watcher;
+    })();
+  </script>
+
+  <script id="Unit">
+    window._ = {
+      before: function (el, target) {
+        target.parentNode.insertBefore(el, target);
+      },
+      extend: function (to, from) {
+        for (var key in from) {
+          to[key] = from[key];
+        }
+      },
+      remove: function (node) {
+        node.parentNode.removeChild(node);
+      }
+    }
+  </script>
+
+  <script id="Compile">
+    var textParser = function (text) {
+      var tokens = [];
+      var tagReg = /\{?\{\{(.+?)\}\}\}?/g;
+      var lastIndex = 0;
+      var match, index, value;
+
+      while (match = tagReg.exec(text)) {
+        index = match.index;
+        if (index > lastIndex) {
+          tokens.push({
+            value: text.slice(lastIndex, index)
+          });
+        }
+        value = match[1];
+        tokens.push({
+          tag: true,
+          value: value.trim()
+        });
+        lastIndex = index + match[0].length;
+      }
+
+      if (lastIndex < text.length - 1) {
+        tokens.push({
+          value: text.slice(lastIndex)
+        });
+      }
+
+      return tokens;
+    };
+
+    var update = function () {
+      var properties = this.expression.split('.');
+      var value = this.vm.$data;
+      properties.forEach(function (property) {
+        value = value[property];
+      })
+      this.el[this.attr] = value;
+      console.log(`更新了DOM-${this.expression}`, value);
+    }
+  </script>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        user: {
+          name: 'monine',
+          age: 25
+        },
+        height: 178
+      }
+    })
   </script>
 </body>
 
