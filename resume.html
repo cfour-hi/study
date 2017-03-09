@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <base target="_blank">
+  <title>Resume - Monine</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font: 14px/1.5 "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+      color: rgba(0,0,0,.65);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    a {
+      text-decoration: none;
+      color: #108ee9;
+    }
+    a:hover {
+      border-bottom: 1px solid currentColor;
+    }
+
+    strong {
+      color: #f04134;
+    }
+
+    .container-warp {
+      width: 900px;
+      height: 100%;
+      padding: 1em 2em;
+      border-left: 1px solid #999;
+      border-right: 1px solid #999;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-warp">
+    <header>
+      <h3>个人简介</h3>
+      <p class="personal">我叫周祥，1992 年 10 月 1 号出生在湖南岳阳，2013 年毕业于湖南工院室内设计专业，2015 年 8 月 17 号正式成为一名前端开发者。</p>
+      <p><em>我的个人博客：<a href="https://monine.github.io">https://monine.github.io</a> 个人非常喜欢 Vue，所以这是一款使用 Vue 和 Github Issues 搭建的 SPA Blog，纯手工打造，并写了三篇有关 Vue 的技术型文章：</em></p>
+      <p></p>
+      <ol>
+        <li><a href="https://monine.github.io/#/article/7">我是如何纯手工打造这款 Vue Blog 的</a></li>
+        <li><a href="https://monine.github.io/#/article/11">Blog (Vue.js) v2.0 升级 (迁移) 指南</a></li>
+        <li><a href="https://monine.github.io/#/article/16">动态数据绑定的理解 - Vue.js 早期源码</a></li>
+      </ol>
+      <p>造轮子：</p>
+      <ol>
+        <li><a href="https://github.com/Monine/vue-count">vue-count</a> - Vue 计数插件</li>
+        <li><a href="https://github.com/Monine/worklog/tree/master/parabola">parabola</a> - 抛物线动画（仿饿了么）</li>
+      </ol>
+      <p>2017 年基本目标是能够熟练使用 webpack 和 node.js，尽量使用 node.js 完成一个小项目，逐步了解前端工程化实现。</p>
+    </header>
+    <section class="work">
+      <h3>前端工作经历</h3>
+      <ul>
+        <li>
+          <p><b>北京智云时代科技有限公司 - 长沙分公司</b></p>
+          <p>在这度过一年半的光阴，感谢这家公司让研发团队的兄弟聚在一起，虽然互联网寒冬让团队解散，但是情谊永存。<br>
+          真心感谢前端老大 <a href="https://github.com/ufologist">军哥</a> 这一年半对我的指导帮助，没有他我不会成长这么快。<br>
+          团队前端技术周刊 - <a href="https://github.com/f2e-journey/xueqianban">学前班 - 学前端</a></p>
+          <p><b>项目经历</b></p>
+          <ol>
+            <li>
+              <p>全员纷享（客户圈）APP</p>
+              <p>混合应用，使用 <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现 UI 层，使用 <a href="https://github.com/aui/artTemplate">artTemplate</a> 渲染页面，使用 <a href="https://github.com/Wikia/ponto">Ponto</a> 与 桥接 Native，提交 70% 的业务代码。</p>
+              <p><strong>贡献：</strong>2017 年初提出使用 Vue 替代 artTemplate 实现页面渲染和交互，使用 <a href="https://github.com/ElemeFE/mint-ui">mint-ui</a> 替代 MSUI 实现 UI 层，并提供示例页面。</p>
+            </li>
+            <li>
+              <p><a href="http://mseller.70c.com/Content/home/index.html">70度微商城卖家平台（移动端）</a></p>
+              <p>使用 <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> (阿里巴巴国际UED前端团队出品的移动端 UI库) 实现的单页应用，提交 80% 的业务代码。</p>
+            </li>
+            <li>
+              <p><a href="http://shop.70c.com/e/CYACJZCJZG?h5State=636245628505721908">70度微商城 - 商品购买</a></p>
+              <p>以 OOP 方式动态实现商品展示、购买、订单和查询物流页面，使用 <a href="https://github.com/sentsin/laytpl">laytpl</a> 渲染页面，独立完成。</p>
+              <p><strong>贡献：</strong>解决一个极其麻烦的跨域问题，原本这个项目是准备做成嵌入H5场景预览 iframe 的商品购买页面，跟场景预览不在同一域名，这就导致在微信浏览器内打开H5场景购买商品需要把商品购买页面的微信配置信息发送给H5场景做微信授权等操作。解决方案是使用 <a href="https://monine.github.io/#/article/2">HTML5 跨域通信 API - window.postMessage()</a></p>
+            </li>
+            <li>
+              <p><a href="http://my.70c.com/index/index">70度H5场景制作平台</a></p>
+              <p>基于 AngularJS 1.x 的单页应用开发。</p>
+              <p><strong>贡献：</strong>发现很多用户打开H5场景是因为好奇或其它原因，手机打开场景后并没有详细查看所有页面内容，大量未被用户看到的图片资源被下载（浪费流量）并渲染到场景页面（初始化缓慢），因此提出场景图片资源懒加载和预加载，并提供基本方案和代码。方案实现之后，针对此类用户打开场景<strong>流量消耗减少 80%！</strong>并且页面初始化渲染速度得到小幅提升。
+              </p>
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>
+
+</html>
