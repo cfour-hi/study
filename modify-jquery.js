@@ -3,8 +3,8 @@ const fs = require('fs')
 let files = fs.readdirSync('./public')
 let htmlFiles = files.filter((file) => /\.html$/.test(file))
 
-const jquery = 'http://libs.baidu.com/jquery/2.0.0/jquery.min.js'
-const replaceJquery = './js/jQuery-2.1.4.js'
+const jquery = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js'
+const replaceJquery = './js/juqery-ui.js'
 
 htmlFiles.forEach((file) => {
   file = './public/' + file
