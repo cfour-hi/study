@@ -41,6 +41,10 @@
       color: #f04134;
     }
 
+    footer {
+      margin-top: 30px;
+    }
+
     .container-warp {
       width: 900px;
       height: 100%;
@@ -61,10 +65,9 @@
     .work-project-list::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
+      top: 0; left: -1.75em;
       width: 1px; height: 100%;
       border-left: 1px dotted rgba(0, 0, 0, 0.3);
-      margin-left: -1.75em;
     }
 
     .work-project-list li {
@@ -105,19 +108,20 @@
     <header>
       <h3>个人简介</h3>
       <p class="personal">我叫周祥，1992 年 10 月 1 号出生在湖南岳阳，2013 年毕业于湖南工院室内设计专业，2015 年 8 月 17 号正式成为一名前端开发者。</p>
+      <p>电话：186 9212 9257 &nbsp; 邮箱：<a href="mailTo:monine.zhou@gmail.com">monine.zhou@gmail.com</a></p>
       <p>我的个人博客：<a href="https://monine.github.io">https://monine.github.io</a> 个人非常喜欢 Vue，所以这是一款使用 Vue 和 Github Issues 搭建的 SPA Blog，纯手工打造，并写了三篇有关 Vue 的技术型文章：</p>
       <ol class="article-list">
         <li><a href="https://monine.github.io/#/article/7">我是如何纯手工打造这款 Vue Blog 的</a></li>
         <li><a href="https://monine.github.io/#/article/11">Blog (Vue.js) v2.0 升级 (迁移) 指南</a></li>
         <li><a href="https://monine.github.io/#/article/16">动态数据绑定的理解 - Vue.js 早期源码</a></li>
       </ol>
-      <p>造轮子：</p>
+      <p>在工作中遇到一些问题或是自己学习，我也自己造了一些轮子：</p>
       <ol class="article-list">
         <li><a href="https://github.com/Monine/vue-count">vue-count</a> - Vue 计数插件 <a href="https://cdn.rawgit.com/Monine/vue-count/fe6e3af1/example.html">Demo</a></li>
         <li><a href="https://github.com/Monine/worklog/tree/master/parabola">parabola</a> - 抛物线动画（仿饿了么） <a href="http://monine.github.io/worklog/parabola/parabola.html">Demo</a></li>
         <li><a href="https://github.com/Monine/worklog/tree/master/tractor">tractor</a> - 下拉加载（刷新）和滚动加载 <a href="http://monine.github.io/worklog/tractor/tractor.html">Demo</a></li>
       </ol>
-      <p>2017 年基本目标是能够熟练使用 webpack 和 node.js，尽量使用 node.js 完成一个小项目，逐步了解前端工程化实现。</p>
+      <p>2017 年基本目标是能够熟练使用 webpack、ES2015、node.js，使用 node.js 完成一个小项目，逐步了解前端工程化实现。</p>
     </header>
     <section>
       <h3>前端工作经历</h3>
@@ -129,8 +133,8 @@
           <ol class="work-project-list">
             <li data-time-end="2017 - 3">
               <p>全员纷享（客户圈）APP</p>
-              <p>混合应用，使用 <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现 UI 层，使用 <a href="https://github.com/aui/artTemplate">artTemplate</a>渲染页面，使用 <a href="https://github.com/Wikia/ponto">Ponto</a> 与 桥接 Native，提交 70% 的业务代码。</p>
-              <p><strong>贡献：</strong>2017 年初提出使用 Vue 替代 artTemplate 实现页面渲染和交互，使用 <a href="https://github.com/ElemeFE/mint-ui">mint-ui</a>替代 MSUI 实现 UI 层，并提供示例页面。</p>
+              <p>混合应用，使用 <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现 UI 层，使用 <a href="https://github.com/aui/artTemplate">artTemplate</a> 渲染页面，使用 <a href="https://github.com/Wikia/ponto">Ponto</a> 与 桥接 Native，提交 70% 的业务代码。</p>
+              <p><strong>贡献：</strong>2017 年初提出使用 Vue 替代 artTemplate 实现页面渲染和交互，使用 <a href="https://github.com/ElemeFE/mint-ui">mint-ui</a> 替代 MSUI 实现 UI 层，并提供示例页面。</p>
             </li>
             <li data-time-end="2016 - 9">
               <p><a href="http://mseller.70c.com/Content/home/index.html">70度微商城卖家平台（移动端）</a></p>
@@ -152,6 +156,10 @@
         </li>
       </ul>
     </section>
+    <footer>
+      <h3>致谢</h3>
+      <p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
+    </footer>
   </div>
 </body>
 
