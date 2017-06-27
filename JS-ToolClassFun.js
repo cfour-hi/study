@@ -51,12 +51,12 @@ var getStrCharCodeLen = function(str) {
   return strLen;
 };
 
-/*＊
-＊ 普通数字替换为金额数字
-*
-* @param {Number} num
-* return {String} num
-*/
+/**
+ * 普通数字替换为金额数字
+ *
+ * @param {Number} num
+ * return {String} num
+ */
 var getGroupNum = function(num) {
   num = num + '';
   var splitNum = num.split('.');
