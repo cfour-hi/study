@@ -1,0 +1,113 @@
+.turntable {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  margin-left: -250px;
+}
+
+ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url("https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/e1aefe216d5ed287e09786eca8b2a9073f569cd6fbf5f841b3bbd2eb5b8d4f5b3ea206d373acb6c0a8459a743ff7e029?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=turntable-bg.png&size=1024*1024");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+ul li {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 120px;
+  height: 200px;
+  margin-left: -60px;
+  text-align: center;
+  list-style: none;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+ul li:nth-child(1) {
+  -webkit-transform: rotate(22.5deg);
+  transform: rotate(22.5deg);
+}
+
+ul li:nth-child(2) {
+  -webkit-transform: rotate(67.5deg);
+  transform: rotate(67.5deg);
+}
+
+ul li:nth-child(3) {
+  -webkit-transform: rotate(112.5deg);
+  transform: rotate(112.5deg);
+}
+
+ul li:nth-child(4) {
+  -webkit-transform: rotate(157.5deg);
+  transform: rotate(157.5deg);
+}
+
+ul li:nth-child(5) {
+  -webkit-transform: rotate(-157.5deg);
+  transform: rotate(-157.5deg);
+}
+
+ul li:nth-child(6) {
+  -webkit-transform: rotate(-112.5deg);
+  transform: rotate(-112.5deg);
+}
+
+ul li:nth-child(7) {
+  -webkit-transform: rotate(-67.5deg);
+  transform: rotate(-67.5deg);
+}
+
+ul li:nth-child(8) {
+  -webkit-transform: rotate(-22.5deg);
+  transform: rotate(-22.5deg);
+}
+
+p {
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 120px;
+  margin-top: -67px;
+  margin-left: -55px;
+  background-image: url("https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/39369d5d8e41d5dfb8d13cbadcae63b1b8ed5022e842f37bd487fb2c869fd4f34d20b50173f058c95f68b4317cbaa06d?pictype=scale&from=30013&version=2.0.0.2&uin=287531381&fname=lottery-btn.png&size=1024*1024");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+.lottery-logs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: rgba(0, 0, 0, .1);
+  overflow-y: auto;
+}
+
+ol {
+  padding: 20px 40px;
+}

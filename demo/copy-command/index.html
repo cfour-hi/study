@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>复制功能</title>
+</head>
+
+<body>
+  <article id="article">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ea veritatis dolores libero culpa reprehenderit
+      ab cumque officiis, quos repellendus. Incidunt consectetur culpa, sed tenetur asperiores minima perferendis ullam,
+      iusto!</p>
+    <p>--------------------------</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit neque maiores quibusdam, eligendi
+      unde nihil cumque suscipit! Officia architecto esse, illum, obcaecati numquam necessitatibus fuga vitae quis quibusdam
+      molestiae.</p>
+  </article>
+  <button id="copy">复制文章</button>
+  <textarea style="width: 500px;height: 100px;" placeholder="点击复制文章按钮，然后 focus 这里试试ctrl + v"></textarea>
+  <script>
+    function copyArticle(event) {
+      var range = document.createRange();
+      range.selectNode(document.getElementById('article'));
+
+      var selection = window.getSelection();
+      if (selection.rangeCount > 0) selection.removeAllRanges();
+      selection.addRange(range);
+
+      document.execCommand('copy');
+    }
+
+    document.getElementById('copy').addEventListener('click', copyArticle, false);
+  </script>
+</body>
+
+</html>

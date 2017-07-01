@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>可视化排序</title>
+  <style>
+    .sort-box {
+      width: 660px;
+      padding-top: 50px;
+      background-color: #eee;
+    }
+
+    .sort-box .sort-item {
+      display: inline-block;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="sort">
+    <sort :sort-arr="sortArr"></sort>
+  </div>
+  <script src="/assets/vendor/vue/vue@2.3.4.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>

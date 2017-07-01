@@ -67,23 +67,3 @@ var getGroupNum = function(num) {
   }
   return integer + '.' + splitNum[1];
 }
-
-/**
-* 获取格式化后的日期
-* get the formatted date
-* 默认返回以 '-' 为分隔符的今天日期
-* return today's date with '-' as the delimiter by default
-*
-* @param {Date} date
-* @param {String} delimiter
-* @return {String}
-*/
-var getFormatDate = function(date, delimiter) {
-  date = date ? new Date(date) : new Date();
-  if (!delimiter) delimiter = '-';
-
-  var y = date.getFullYear();
-  var m = date.getMonth() + 1;
-  var d = date.getDate();
-  return [y, m, d].join(delimiter);
-};

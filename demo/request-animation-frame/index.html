@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>帧动画</title>
+  <style>
+    .anim-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #4a4;
+      will-change: transform;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="anim-circle"></div>
+  <p>打开开发者工具 Console 查看动画耗时详情</p>
+  <script>
+    ; (function () {
+      if (!Date.now) {
+        Date.now = function () {
+          return new Date().getTime();
+        };
+      }
+
+      var circle = document.querySelector('.anim-circle');
+      var left = 0;
+      var timeConsum = 0;
+      var lastTime = Date.now();
+      var countTime = 0;
+
+      function doTransformAnimation() {
+        if (left > 500) return;
+
+        var now = Date.now();
+        var prevTime = lastTime;
+        lastTime = now;
+        timeConsum = lastTime - prevTime;
+        countTime += timeConsum;
+
+        console.log('当前时间戳：' + now + ', 动画执行耗时：' + timeConsum + 'ms' + ', 动画总耗时：' + countTime + 'ms');
+
+        circle.style.transform = 'translateX(' + left + 'px)';
+        left += 1;
+        window.requestAnimationFrame(doTransformAnimation);
+      }
+
+      window.requestAnimationFrame(doTransformAnimation);
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.menu {
+  width: 200px; height: 500px;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+.menu li {
+  line-height: 50px;
+  color: #fff;
+}
+
+.menu li:hover {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.submenu {
+  position: absolute;
+  top: 0; left: 200px;
+  width: 800px;
+  margin-top: 0;
+  min-height: 500px;
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
+
+.submenu li {
+  display: none;
+}
+
+.submenu li.active {
+  display: block;
+}
