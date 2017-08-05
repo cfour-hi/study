@@ -1,25 +1,25 @@
 ; (function () {
-  var THRESHOLD = 33;
-  var RED_BALL_NUM = 33;
+  const THRESHOLD = 33;
+  const RED_BALL_NUM = 33;
 
   // --------------------------------------------------------------------------- //
   // +++++++++++++++++++++++++++++++++ 测试中奖 +++++++++++++++++++++++++++++++++ //
   // --------------------------------------------------------------------------- //
 
   ; (function () {
-    var trPeriodList = Array.from(document.getElementById('cpdata').querySelectorAll('tr[data-period]'));
+    const trPeriodList = Array.from(document.getElementById('cpdata').querySelectorAll('tr[data-period]'));
 
-    for (var i = 1; i < 3; i++) {
-      var recommendResult = getRecommendResult(trPeriodList.slice(0, -i));
-      var lastPeriod = (i === 1 ? trPeriodList.slice(-i) : trPeriodList.slice(-i, -i + 1))[0];
-      var lotteryResult = getPeriodRedBall(lastPeriod).sort();
+    for (let i = 1; i < 3; i++) {
+      const recommendResult = getRecommendResult(trPeriodList.slice(0, -i));
+      const lastPeriod = (i === 1 ? trPeriodList.slice(-i) : trPeriodList.slice(-i, -i + 1))[0];
+      const lotteryResult = getPeriodRedBall(lastPeriod).sort((a, b) => a - b);
 
       console.log(`${lastPeriod.dataset.period}:`);
       console.log(`推荐号码：${recommendResult.join()}`);
       console.log(`开奖号码：${lotteryResult.join()}`);
 
-      var redBallWinNum = 0;
-      var redBallWinNumList = [];
+      let redBallWinNum = 0;
+      const redBallWinNumList = [];
 
       lotteryResult.forEach(lotteryNum => {
         if (recommendResult.find(recommendNum => recommendNum === lotteryNum)) {
@@ -38,14 +38,14 @@
   // --------------------------------------------------------------------------- //
 
   function getRecommendResult (trPeriodList) {
-    var recommendList = [];
-    var round = trPeriodList.length / THRESHOLD;
+    const recommendList = [];
+    const round = trPeriodList.length / THRESHOLD;
 
-    for (var i = 1; i <= round; i++) {
+    for (let i = 1; i <= round; i++) {
       recommendList.push(getStageRecommendResult(trPeriodList.slice(-(i * THRESHOLD))));
     }
 
-    var recommendRedBalls = {};
+    const recommendRedBalls = {};
 
     recommendList.forEach(stageRecommendList => {
       stageRecommendList.forEach(num => {
@@ -53,7 +53,7 @@
       });
     });
 
-    var recommendRedBallList = Object.keys(recommendRedBalls);
+    let recommendRedBallList = Object.keys(recommendRedBalls);
 
     recommendRedBallList.sort((a, b) => recommendRedBalls[b] - recommendRedBalls[a]);
     recommendRedBallList = recommendRedBallList.slice(0, 9);
@@ -62,19 +62,19 @@
   }
 
   function getStageRecommendResult (trPeriodList) {
-    var redBallNumList = []
+    let redBallNumList = []
 
     trPeriodList.forEach(tr => {
       redBallNumList = redBallNumList.concat(getPeriodRedBall(tr));
     });
 
-    var stat = getStatResult(redBallNumList);
+    const stat = getStatResult(redBallNumList);
 
     return Object.keys(stat).sort((a, b) => stat[a] - stat[b]).slice(13, 22).map(num => parseInt(num));
   }
 
   function getStatResult (redBallNumList) {
-    var stat = getInitRedBallStat();
+    const stat = getInitRedBallStat();
 
     redBallNumList.forEach(num => {
       stat[num] += 1;
@@ -84,9 +84,9 @@
   }
 
   function getInitRedBallStat () {
-    var stat = {};
+    const stat = {};
 
-    for (var i = 1; i <= RED_BALL_NUM; i++) {
+    for (let i = 1; i <= RED_BALL_NUM; i++) {
       stat[i] = 0;
     }
 
@@ -94,7 +94,7 @@
   }
 
   function getPeriodRedBall (tr) {
-    var ballList = Array.from(tr.querySelectorAll('.ball_red')).concat(Array.from(tr.querySelectorAll('.ball_brown')));
+    const ballList = Array.from(tr.querySelectorAll('.ball_red')).concat(Array.from(tr.querySelectorAll('.ball_brown')));
     return ballList.map(ball => parseInt(ball.innerHTML));
   }
 
