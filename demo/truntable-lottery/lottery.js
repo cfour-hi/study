@@ -2,14 +2,14 @@
   const THRESHOLD = 33;
   const RED_BALL_NUM = 33;
 
-  // --------------------------------------------------------------------------- //
-  // +++++++++++++++++++++++++++++++++ 测试中奖 +++++++++++++++++++++++++++++++++ //
-  // --------------------------------------------------------------------------- //
+  // -------------------------------------------------------------------------------- //
+  // +++++++++++++++++++++++++++++++++ lottery test +++++++++++++++++++++++++++++++++ //
+  // -------------------------------------------------------------------------------- //
 
   ; (function () {
     const trPeriodList = Array.from(document.getElementById('cpdata').querySelectorAll('tr[data-period]'));
 
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i < 10; i++) {
       const recommendResult = getRecommendResult(trPeriodList.slice(0, -i));
       const lastPeriod = (i === 1 ? trPeriodList.slice(-i) : trPeriodList.slice(-i, -i + 1))[0];
       const lotteryResult = getPeriodRedBall(lastPeriod).sort((a, b) => a - b);
@@ -33,9 +33,9 @@
     }
   }());
 
-  // --------------------------------------------------------------------------- //
-  // --------------------------------- 测试中奖 --------------------------------- //
-  // --------------------------------------------------------------------------- //
+  // -------------------------------------------------------------------------------- //
+  // --------------------------------- lottery test --------------------------------- //
+  // -------------------------------------------------------------------------------- //
 
   function getRecommendResult (trPeriodList) {
     const recommendList = [];
@@ -53,12 +53,10 @@
       });
     });
 
-    let recommendRedBallList = Object.keys(recommendRedBalls);
-
-    recommendRedBallList.sort((a, b) => recommendRedBalls[b] - recommendRedBalls[a]);
-    recommendRedBallList = recommendRedBallList.slice(0, 9);
-
-    return recommendRedBallList.map(ball => parseInt(ball));
+    return Object.keys(recommendRedBalls)
+      .sort((a, b) => recommendRedBalls[b] - recommendRedBalls[a])
+      .slice(0, 9)
+      .map(ball => parseInt(ball));
   }
 
   function getStageRecommendResult (trPeriodList) {
@@ -69,8 +67,12 @@
     });
 
     const stat = getStatResult(redBallNumList);
+    const average = parseInt(trPeriodList.length * 6 / RED_BALL_NUM);
+    const min = average - 2;
 
-    return Object.keys(stat).sort((a, b) => stat[a] - stat[b]).slice(13, 22).map(num => parseInt(num));
+    return Object.keys(stat)
+      .filter(key => (stat[key] >= min && stat[key] <= average))
+      .map(num => parseInt(num))
   }
 
   function getStatResult (redBallNumList) {
@@ -94,7 +96,9 @@
   }
 
   function getPeriodRedBall (tr) {
-    const ballList = Array.from(tr.querySelectorAll('.ball_red')).concat(Array.from(tr.querySelectorAll('.ball_brown')));
+    const ballList = Array.from(tr.querySelectorAll('.ball_red'))
+      .concat(Array.from(tr.querySelectorAll('.ball_brown')));
+
     return ballList.map(ball => parseInt(ball.innerHTML));
   }
 
