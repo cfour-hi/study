@@ -6,7 +6,7 @@
 
 ...
 
-### 关于此 repository
+## 关于此 repository
 
 1. Issues 内记录一些前端知识点，长期更新。
 
