@@ -1,7 +1,11 @@
-# 前端学习记录
+## 前端生涯简介
 
-## 优秀文章
+2014 年 11 月 11 日开始接触学习前端 - 新人阶段
 
-- [HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)
-- [通俗大白话来理解TCP协议的三次握手和四次分手](https://github.com/jawil/blog/issues/14)
-- [TCP三次握手和四次挥手](http://www.jianshu.com/p/4e20b273487b)
+2015 年 8 月 17 日入职正式成为一名前端 - 菜鸟阶段
+
+...
+
+---
+
+Issues 内记录一些前端知识点
