@@ -26,7 +26,16 @@
     <li>submenu-5</li>
   </ul>
   <script src="/assets/vendor/jquery/jquery@3.2.1.js"></script>
-  <script src="index.js"></script>
+  <!-- <script src="index.js"></script> -->
+  <script src="cross-menu.js"></script>
+  <script>
+    crossMenu({
+      menu: document.querySelector('.menu'),
+      menuItemTag: 'li',
+      submenu: document.querySelector('.submenu'),
+      submenuItemTag: 'li'
+    })
+  </script>
 </body>
 
 </html>
