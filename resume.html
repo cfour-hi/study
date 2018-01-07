@@ -54,11 +54,11 @@
     }
 
     .container-warp {
-      width: 900px;
+      width: 940px;
       height: 100%;
       padding: 0.5em 2em;
-      border-left: 1px solid #ccc;
-      border-right: 1px solid #ccc;
+      /* border-left: 1px solid #ccc; */
+      /* border-right: 1px solid #ccc; */
       margin: 0 auto;
     }
 
@@ -119,7 +119,7 @@
       font-size: 12px;
       text-align: center;
       list-style: none;
-      color: #919191;
+      /* color: #919191; */
     }
 
     .personal-projects li {
@@ -132,9 +132,10 @@
     }
 
     .personal-projects .title {
-      margin: .5em 0;
+      margin: 0;
       border-bottom: 1px solid #eee;
       font-size: 14px;
+      line-height: 2;
     }
 
     .personal-projects .title a:hover {
@@ -161,7 +162,7 @@
             <b>北京金云同向信息科技有限公司 - 长沙办公处</b>
           </p>
           <p>
-            <small>电力新能源方向的创业公司，以前端负责人身份加入。</small>
+            <small>电力新能源方向创业公司，以前端负责人身份加入。</small>
           </p>
           <p>
             <b>项目经历</b>
@@ -174,7 +175,7 @@
             </li>
             <li data-time-start="2017 - 4">
               <p>
-                <a href="http://my.jytxsoft.com/">同向云平台</a>
+                <a href="http://my.jytxsoft.com/">售电运营平台 - 同向云</a>
               </p>
               <p>使用 Vue 全家桶开发的单页应用</p>
               <p>负责前端工作，从技术选型到代码实现，快速开发的同时保证代码质量及相关性能优化，保证其可维护性。</p>
@@ -206,10 +207,9 @@
           <ul class="work-projects">
             <li data-time-end="2017 - 3">
               <p>全员纷享（客户圈）App</p>
-              <p>混合应用 - 前端使用
-                <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现的移动端单页应用</p>
-              <p>MSUI 提供的的下拉刷新用作下拉加载会有严重的性能问题，在未找到与项目适配的第三方库的情况下，自己写了个移动端下拉加载（刷新）和滚动加载 插件：
-                <a href="https://github.com/Monine/tractor.js">tractor.js</a> 提供给项目使用。</p>
+              <p>混合应用 - 前端使用 MSUI 实现的移动端单页应用</p>
+              <p>MSUI 提供的的下拉刷新用作下拉加载会有严重的性能问题，在未找到与项目适配的第三方库的情况下，自己写了个移动端下拉加载（刷新）和滚动加载 插件： <a href="https://github.com/Monine/tractor.js">tractor.js</a> 提供给项目使用。</p>
+              <p>项目有一个业务需求是做一个类似于饿了么把商品添加到购物车的小球弹跳动效，同样在未找到与项目适配的第三方库的情况下，自己写了个抛物线动画插件：<a href="https://github.com/Monine/worklog/tree/master/parabola">parabola</a> 提供给项目使用。</p>
               <!-- <p>此项目对我而言有一个整体的提升，让我站在更高的角度思考项目中前端的一些取舍，并了解到与 App 客户端的协调合作。</p> -->
               <!-- <p>此项目期间，另外一个收获是学习了 Vue 相关知识，明白数据驱动视图、单向数据流等等思想，让我对前端的理解又到了一个新的境界。</p> -->
             </li>
@@ -217,8 +217,7 @@
               <p>
                 <a href="http://mseller.70c.com/Content/home/index.html">70度微商城卖家平台（移动端）</a>
               </p>
-              <p>使用
-                <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现的移动端单页应用</p>
+              <p>使用 MSUI 实现的移动端单页应用</p>
               <!-- <p>在此项目中了解到如何合理使用第三方库，如何处理第三方库与项目之间水土不服的问题，了解到移动端适配的一些问题和解决方案。</p> -->
             </li>
             <li data-time-end="2016 - 8">
@@ -227,7 +226,7 @@
               </p>
               <p>以 OOP 方式实现的移动端商品展示、购买、订单和物流查询等</p>
               <!-- <p>在此项目中加深了对 OOP 对理解和应用，了解到前端项目结构的部署，学会使用 gulp、Flex 布局、BFC、跨域通信等。</p> -->
-              <p>期间遇到的一个跨域通信的难题，让我明白 window.postMessage 在跨域通信中的所能发挥的作用，虽然最终业务并没有使用到此方案，但在解决此业务问题的过程中让我对跨域通信有了更深层次的理解。</p>
+              <p>期间遇到的一个跨域通信的难题，让我明白 window.postMessage 在跨域通信中的所能发挥的作用，并写下 <a href="https://monine.github.io/#/article/2">文章</a> 记录。虽然最终业务并没有使用到此方案，但在解决此业务问题的过程中让我对跨域通信有了更深层次的理解。</p>
             </li>
             <li data-time-start="2015 - 8" data-time-end="2016 - 4">
               <p>
@@ -253,39 +252,31 @@
           <p class="title">
             <a href="https://github.com/Monine/tractor.js">tractor.js</a>
           </p>
-          <p>移动端下拉加载（刷新）和滚动加载
-            <a href="https://monine.github.io/tractor.js/example/">Demo</a>
-          </p>
+          <p>移动端下拉加载（刷新）和滚动加载</p>
         </li>
         <li>
           <p class="title">
             <a href="https://github.com/Monine/webpack-multi-page">webpack-multi-page</a>
           </p>
-          <p>webpack 前端多页项目工程
-            <a href="https://monine.github.io/webpack-multi-page/dist/">Demo</a>
-          </p>
+          <p>webpack 前端多页项目工程</p>
         </li>
         <li>
           <p class="title">
             <a href="https://github.com/fe-monine/cross-menu">cross-menu</a>
           </p>
-          <p>仿亚马逊智能导航菜单功能，无依赖，支持现代浏览器。
-            <a href="https://fe-monine.github.io/cross-menu/example/">Demo</a>
-          </p>
+          <p>仿亚马逊智能导航菜单</p>
         </li>
         <li>
           <p class="title">
             <a href="https://github.com/Monine/rcgber">rcgber</a>
           </p>
-          <p>色彩丰富的图形背景生成器
-            <a href="https://monine.github.io/rcgber/example">Demo</a>
-          </p>
+          <p>色彩丰富的图形背景生成器</p>
         </li>
         <li>
           <p class="title">
             <a href="https://github.com/Monine/gitstars">gitstars</a>
           </p>
-          <p>Github Stars Repositories Manager（仓库管理器）</p>
+          <p>Github Stars 仓库管理器</p>
         </li>
       </ul>
     </footer>
