@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +28,10 @@
       border-bottom: 1px solid #eee;
     }
 
+    p {
+      margin: 0.95em 0;
+    }
+
     a {
       text-decoration: none;
       color: #108ee9;
@@ -44,41 +49,43 @@
       margin-top: 30px;
     }
 
+    header h3 {
+      margin-top: 0;
+    }
+
     .container-warp {
       width: 900px;
       height: 100%;
-      padding: 1em 2em;
+      padding: 0.5em 2em;
       border-left: 1px solid #ccc;
       border-right: 1px solid #ccc;
       margin: 0 auto;
     }
 
-    .icon-github {
-      vertical-align: middle;
+    .companys>li {
+      margin-bottom: 30px;
     }
 
-    .article-list {
-      font-size: 12px;
-    }
-
-    .work-project-list {
+    .work-projects {
       position: relative;
     }
 
-    .work-project-list::before {
+    .work-projects::before {
       content: "";
       position: absolute;
-      top: 0; left: -1.5em;
-      width: 1px; height: 100%;
+      top: 0;
+      left: -1.5em;
+      width: 1px;
+      height: 100%;
       border-left: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-    .work-project-list li {
+    .work-projects li {
       position: relative;
     }
 
-    .work-project-list li::before,
-    .work-project-list li::after {
+    .work-projects li::before,
+    .work-projects li::after {
       position: absolute;
       left: -40px;
       font-size: 12px;
@@ -86,85 +93,203 @@
       background-color: #fff;
     }
 
-    .work-project-list li::before {
+    .work-projects li::before {
       content: attr(data-time-start);
       top: 100%;
       -webkit-transform: translateX(-100%);
-              transform: translateX(-100%);
+      transform: translateX(-100%);
     }
 
-    .work-project-list li::after {
+    .work-projects li::after {
       content: attr(data-time-end);
       top: 0;
       -webkit-transform: translate(-100%, -75%);
-              transform: translate(-100%, -75%);
+      transform: translate(-100%, -75%);
     }
 
-    .work-project-list li p:not(:first-child) {
+    .work-projects li p:not(:first-child) {
       font-size: 12px;
+    }
+
+    .personal-projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 0;
+      font-size: 12px;
+      text-align: center;
+      list-style: none;
+      color: #919191;
+    }
+
+    .personal-projects li {
+      flex: 0 0 32%;
+      padding: 0 5px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      margin-bottom: 1em;
+      /* box-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.15); */
+    }
+
+    .personal-projects .title {
+      margin: .5em 0;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .personal-projects .title a:hover {
+      border-bottom: none;
     }
   </style>
 </head>
+
 <body>
   <div class="container-warp">
     <header>
       <h3>个人简介</h3>
-      <p class="personal">我叫周祥，1992 年 10 月 1 号出生在湖南岳阳，2013 年毕业于湖南工院 － 室内设计专业，2014 年 11 月 12 号开始<a href="https://monine.github.io/study/">自学前端</a>，2015 年 8 月 17 号正式成为一名前端开发者。</p>
-      <p>电话：186 9212 9257 &nbsp; 邮箱：<a href="mailTo:monine.zhou@gmail.com">monine.zhou@gmail.com</a> &nbsp; Github：<a class="icon-github" href="https://github.com/Monine"><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M941.714 512q0 143.433-83.712 258.011T641.719 928.585q-15.433 2.853-22.565-3.986t-7.131-17.152V786.871q0-55.442-29.696-81.152 32.585-3.438 58.587-10.277t53.723-22.272 46.299-37.998 30.281-60.014 11.703-86.018q0-69.157-45.129-117.723 21.138-52.005-4.571-116.553-16.018-5.157-46.299 6.29t-52.553 25.161l-21.723 13.714q-53.138-14.848-109.714-14.848t-109.714 14.848q-9.143-6.29-24.283-15.433t-47.726-22.016-49.152-7.717q-25.161 64.585-3.986 116.553-45.129 48.567-45.129 117.723 0 48.567 11.703 85.723t29.989 60.014 46.007 38.29 53.723 22.272 58.587 10.277q-22.857 20.553-28.014 58.843-11.995 5.705-25.71 8.558t-32.585 2.853-37.413-12.288-31.707-35.73q-10.862-18.286-27.721-29.696t-28.27-13.714l-11.447-1.719q-11.995 0-16.567 2.56t-2.853 6.583 5.157 8.009 7.424 6.839l3.986 2.853q12.581 5.705 24.869 21.723t17.993 29.147l5.705 13.129q7.424 21.723 25.161 35.145t38.29 17.152 39.717 3.986 31.707-2.011l13.129-2.304q0 21.723.293 50.871t.293 30.866q0 10.277-7.424 17.152t-22.857 3.986q-132.571-43.995-216.283-158.574T64.111 511.925q0-119.442 58.843-220.27t159.707-159.707 220.27-58.843 220.27 58.843 159.707 159.707 58.843 220.27z" fill="#333"/></svg></a></p>
-      <p>我的个人博客：<a href="https://monine.github.io">https://monine.github.io</a> 个人非常喜欢 <strong>Vue</strong>，所以这是一款使用 Vue 和 Github Issues 搭建的 SPA Blog，利用个人时间学习和纯手工打造，并写了三篇有关 Vue 的技术型文章：</p>
-      <ol class="article-list">
-        <li><a href="https://monine.github.io/#/article/7">我是如何纯手工打造这款 Vue Blog 的</a></li>
-        <li><a href="https://monine.github.io/#/article/11">Blog (Vue.js) v2.0 升级 (迁移) 指南</a></li>
-        <li><a href="https://monine.github.io/#/article/16">动态数据绑定的理解 - Vue.js 早期源码</a></li>
-      </ol>
-      <p>在工作中遇到一些问题或是自己学习，我也有自己的一些小作品：</p>
-      <ol class="article-list">
-        <li><a href="https://github.com/Monine/worklog/tree/master/parabola">parabola</a> - 抛物线动画（仿饿了么） <a href="http://monine.github.io/worklog/parabola/parabola.html">Demo</a></li>
-        <li><a href="https://github.com/Monine/worklog/tree/master/tractor">tractor</a> - 下拉加载（刷新）和滚动加载 <a href="http://monine.github.io/worklog/tractor/tractor.html">Demo</a></li>
-        <li><a href="https://github.com/Monine/vue-count">vue-count</a> - Vue 计数插件 <a href="https://cdn.rawgit.com/Monine/vue-count/fe6e3af1/example.html">Demo</a></li>
-        <li>cnavas 小游戏：<a href="http://monine.github.io/worklog/canvas-games/snake/snake.html">贪吃蛇</a>、<a href="http://monine.github.io/worklog/canvas-games/pone/pone.html">乒乓球</a>、<a href="http://monine.github.io/worklog/canvas-games/gobang/">五子棋</a></li>
-      </ol>
+      <p class="personal">周祥，1992 年 10 月 1 号出生于湖南岳阳，2013 年毕业于湖南工院室内设计专业，2014 年 11 月 12 号开始自学前端，2015 年 8 月 17 号加入智云正式从事前端开发工作。</p>
+      <p>电话：186-9212-9257 &nbsp; 邮箱：
+        <a href="mailTo:monine.zhou@gmail.com">monine.zhou@gmail.com</a> &nbsp; 博客地址：
+        <a href="https://monine.github.io/">https://monine.github.io</a>
+      </p>
     </header>
-    <section>
+    <main>
       <h3>前端工作经历</h3>
-      <ul>
+      <ul class="companys">
         <li>
-          <p><b>北京智云时代科技有限公司 - 长沙分公司</b></p>
-          <p><small>团队前端技术周刊 - <a href="https://github.com/f2e-journey/xueqianban">学前班 - 学前端</a></small></p>
-          <p><b>项目经历</b></p>
-          <ol class="work-project-list">
+          <p>
+            <b>北京金云同向信息科技有限公司 - 长沙办公处</b>
+          </p>
+          <p>
+            <small>电力新能源方向的创业公司，以前端负责人身份加入。</small>
+          </p>
+          <p>
+            <b>项目经历</b>
+          </p>
+          <ul class="work-projects">
+            <li data-time-end="&nbsp; 至 今 &nbsp; ">
+              <p>电厂内部系统</p>
+              <p>使用 Vue 全家桶开发的单页应用</p>
+              <p>包含人员维护、在线学习、在线考试、新闻发布等功能的后台系统</p>
+            </li>
+            <li data-time-start="2017 - 4">
+              <p>
+                <a href="http://my.jytxsoft.com/">同向云平台</a>
+              </p>
+              <p>使用 Vue 全家桶开发的单页应用</p>
+              <p>负责前端工作，从技术选型到代码实现，快速开发的同时保证代码质量及相关性能优化，保证其可维护性。</p>
+              <p>项目期间对用户权限及动态路由加载有所感悟，总结出关于 Vue 动态加载路由的实现及其在用户权限控制中的作用。
+                <a href="https://monine.github.io/#/article/20">文章链接</a>
+              </p>
+              <p>项目期间需要做几个官网类型的展示型页面，于是动手写了一个基于 webpack 的前端多页项目工程。
+                <a href="https://monine.github.io/#/article/21">文章链接</a> &nbsp;
+                <a href="https://github.com/Monine/webpack-multi-page">项目链接</a>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <b>北京智云时代科技有限公司 - 长沙分公司</b>
+          </p>
+          <p>
+            <small>前端生涯的起点，在这里从初出茅庐的小菜鸟成长为能够担负责任的开发者，经历的所有项目谈不上什么贡献，都是尽最大所能在完成任务的同时保证质量，期间不断反思、总结和学习。</small>
+          </p>
+          <p>
+            <small>团队前端技术周刊 -
+              <a href="https://github.com/f2e-journey/xueqianban">学前班 - 学前端</a>
+            </small>
+          </p>
+          <p>
+            <b>项目经历</b>
+          </p>
+          <ul class="work-projects">
             <li data-time-end="2017 - 3">
               <p>全员纷享（客户圈）App</p>
-              <p>混合应用，使用 <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现 UI 层，使用 <a href="https://github.com/aui/artTemplate">artTemplate</a> 渲染页面，使用 <a href="https://github.com/Wikia/ponto">Ponto</a> 与 桥接 Native，提交 70% 的业务代码。</p>
-              <p>在此项目中了解到如何与 App 客户端通信、交互，前后端分离之 <a href="https://github.com/ufologist/puer-mock">puer-mock</a> 模拟后端接口假数据，EChart 动态图形化数据展现，缓动函数和贝赛尔曲线，下拉加载和滚动加载的实现，对项目技术方案选型的思考等。由于该项目涉及法律风险，所以被停。</p>
-              <p><strong>贡献：</strong>年初提出使用 Vue 替代 artTemplate 实现页面渲染和交互，使用 <a href="https://github.com/ElemeFE/mint-ui">mint-ui</a> 替代 MSUI 实现 UI 层，并提供示例页面。</p>
+              <p>混合应用 - 前端使用
+                <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现的移动端单页应用</p>
+              <p>MSUI 提供的的下拉刷新用作下拉加载会有严重的性能问题，在未找到与项目适配的第三方库的情况下，自己写了个移动端下拉加载（刷新）和滚动加载 插件：
+                <a href="https://github.com/Monine/tractor.js">tractor.js</a> 提供给项目使用。</p>
+              <!-- <p>此项目对我而言有一个整体的提升，让我站在更高的角度思考项目中前端的一些取舍，并了解到与 App 客户端的协调合作。</p> -->
+              <!-- <p>此项目期间，另外一个收获是学习了 Vue 相关知识，明白数据驱动视图、单向数据流等等思想，让我对前端的理解又到了一个新的境界。</p> -->
             </li>
             <li data-time-end="2016 - 9">
-              <p><a href="http://mseller.70c.com/Content/home/index.html">70度微商城卖家平台（移动端）</a></p>
-              <p>使用 <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> (阿里巴巴国际UED前端团队出品的移动端 UI库) 实现的单页应用，提交 80% 的业务代码。</p>
-              <p>在此项目中了解到如何合理使用框架及在使用过程中对框架源码进行探索以找出解决跟项目水土不服的方案，前端路由的实现，无刷新修改 URL，H5终端适配 <a href="https://github.com/amfe/lib-flexible">lib-flexible</a> 等。</p>
+              <p>
+                <a href="http://mseller.70c.com/Content/home/index.html">70度微商城卖家平台（移动端）</a>
+              </p>
+              <p>使用
+                <a href="https://github.com/sdc-alibaba/SUI-Mobile">MSUI</a> 实现的移动端单页应用</p>
+              <!-- <p>在此项目中了解到如何合理使用第三方库，如何处理第三方库与项目之间水土不服的问题，了解到移动端适配的一些问题和解决方案。</p> -->
             </li>
             <li data-time-end="2016 - 8">
-              <p><a href="http://shop.70c.com/e/CYACJZCJZG?h5State=636245628505721908">70度微商城 - 商品购买</a></p>
-              <p>以 OOP 方式动态实现商品展示、购买、订单和查询物流页面，使用 <a href="https://github.com/sentsin/laytpl">laytpl</a> 渲染页面，独立完成。</p>
-              <p>在此项目中加深了对 OOP 对理解和应用，了解到前端项目结构的部署，学会使用 gulp、Flex 布局、BFC、跨域通信等。</p>
-              <p><strong>贡献：</strong>解决一个极其麻烦的跨域问题，原本这个项目是准备做成嵌入H5场景预览 iframe 的商品购买页面，跟场景预览不在同一域名，这就导致在微信浏览器内打开H5场景购买商品需要把商品购买页面的微信配置信息发送给H5场景做微信授权等操作。解决方案是使用
-                <a href="https://monine.github.io/#/article/2">HTML5 跨域通信 API - window.postMessage()</a></p>
+              <p>
+                <a href="http://shop.70c.com/e/CYACJZCJZG?h5State=636245628505721908">70度微商城 - 商品购买</a>
+              </p>
+              <p>以 OOP 方式实现的移动端商品展示、购买、订单和物流查询等</p>
+              <!-- <p>在此项目中加深了对 OOP 对理解和应用，了解到前端项目结构的部署，学会使用 gulp、Flex 布局、BFC、跨域通信等。</p> -->
+              <p>期间遇到的一个跨域通信的难题，让我明白 window.postMessage 在跨域通信中的所能发挥的作用，虽然最终业务并没有使用到此方案，但在解决此业务问题的过程中让我对跨域通信有了更深层次的理解。</p>
             </li>
             <li data-time-start="2015 - 8" data-time-end="2016 - 4">
-              <p><a href="http://my.70c.com/index/index">70度H5场景制作平台</a></p>
-              <p>基于 AngularJS 1.x 的单页应用开发。</p>
-              <p>在此项目中了解到团队开发中必要的代码规范，与后端的协调合作，打包工具 grunt，管理工具 SVN 和 禅道，前端 MV* 的思想，学会使用 AngularJS，逐步提升对 HTML、CSS、JS 理解和运用，对 HTML5 语意化，CSS 伪元素、过渡、动画，JS 闭包、this 指向、OOP、原型、帧动画 requestAnimationFrame、web 缓存等有了更深的认识和理解。总的来说，这是我作为一名合格前端的开始。</p>
-              <p><strong>贡献：</strong>发现很多用户打开H5场景是因为好奇或其它原因，手机打开场景后并没有详细查看所有页面内容，大量未被用户看到的图片资源被下载（浪费流量）并渲染到场景页面（初始化缓慢），因此提出场景图片资源懒加载和预加载，并提供基本方案和代码。方案实现之后，针对此类用户打开场景<strong>流量消耗减少 80%！</strong>并且页面初始化渲染速度得到小幅提升。</p>
+              <p>
+                <a href="http://my.70c.com/index/index">70度H5场景制作平台</a>
+              </p>
+              <p>基于 AngularJS 1.x 的单页应用开发</p>
+              <!-- <p>在此项目中了解到团队开发中必要的代码规范，与后端的协调合作，打包工具 grunt，管理工具 SVN 和 禅道，前端 MV* 的思想，学会使用 AngularJS，逐步提升对 HTML、CSS、JS 的理解和运用，处在一个前端开发者的初始阶段。</p> -->
             </li>
-          </ol>
+          </ul>
         </li>
       </ul>
-    </section>
+    </main>
     <footer>
-      <h3>致谢</h3>
-      <p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
+      <h3>个人项目</h3>
+      <ul class="personal-projects">
+        <li>
+          <p class="title">
+            <a href="https://github.com/Monine/monine.github.io/tree/vue-dev">Blog</a>
+          </p>
+          <p>使用 Vue 和 Github 打造的个人博客</p>
+        </li>
+        <li>
+          <p class="title">
+            <a href="https://github.com/Monine/tractor.js">tractor.js</a>
+          </p>
+          <p>移动端下拉加载（刷新）和滚动加载
+            <a href="https://monine.github.io/tractor.js/example/">Demo</a>
+          </p>
+        </li>
+        <li>
+          <p class="title">
+            <a href="https://github.com/Monine/webpack-multi-page">webpack-multi-page</a>
+          </p>
+          <p>webpack 前端多页项目工程
+            <a href="https://monine.github.io/webpack-multi-page/dist/">Demo</a>
+          </p>
+        </li>
+        <li>
+          <p class="title">
+            <a href="https://github.com/fe-monine/cross-menu">cross-menu</a>
+          </p>
+          <p>仿亚马逊智能导航菜单功能，无依赖，支持现代浏览器。
+            <a href="https://fe-monine.github.io/cross-menu/example/">Demo</a>
+          </p>
+        </li>
+        <li>
+          <p class="title">
+            <a href="https://github.com/Monine/rcgber">rcgber</a>
+          </p>
+          <p>色彩丰富的图形背景生成器
+            <a href="https://monine.github.io/rcgber/example">Demo</a>
+          </p>
+        </li>
+        <li>
+          <p class="title">
+            <a href="https://github.com/Monine/gitstars">gitstars</a>
+          </p>
+          <p>Github Stars Repositories Manager（仓库管理器）</p>
+        </li>
+      </ul>
     </footer>
   </div>
 </body>
+
 </html>
