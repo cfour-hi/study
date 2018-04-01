@@ -2,9 +2,9 @@
   const THRESHOLD = 33;
   const RED_BALL_NUM = 33;
 
-  // -------------------------------------------------------------------------------- //
-  // +++++++++++++++++++++++++++++++++ lottery test +++++++++++++++++++++++++++++++++ //
-  // -------------------------------------------------------------------------------- //
+  // -------------------------------- //
+  // +++++++++ lottery test +++++++++ //
+  // ---------------------------------//
 
   ; (function () {
     const trPeriodList = Array.from(document.getElementById('cpdata').querySelectorAll('tr[data-period]'));
@@ -26,16 +26,15 @@
           redBallWinNum += 1;
           redBallWinNumList.push(lotteryNum);
         }
-      }
-      );
+      });
 
       console.log(`推荐结果: 命中 ${redBallWinNum} 个红球 => [${redBallWinNumList.join()}]`);
     }
   }());
 
-  // -------------------------------------------------------------------------------- //
-  // --------------------------------- lottery test --------------------------------- //
-  // -------------------------------------------------------------------------------- //
+  // -------------------------------- //
+  // --------- lottery test --------- //
+  // ---------------------------------//
 
   function getRecommendResult (trPeriodList) {
     const recommendList = [];
@@ -96,8 +95,8 @@
   }
 
   function getPeriodRedBall (tr) {
-    const ballList = Array.from(tr.querySelectorAll('.ball_red'))
-      .concat(Array.from(tr.querySelectorAll('.ball_brown')));
+    const ballList = [...tr.querySelectorAll('.ball_red')]
+      .concat([...tr.querySelectorAll('.ball_brown')]);
 
     return ballList.map(ball => parseInt(ball.innerHTML));
   }
