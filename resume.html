@@ -35,7 +35,7 @@
     }
 
     a {
-      text-decoration: none;
+      /* text-decoration: none; */
       color: #108ee9;
     }
 
@@ -173,26 +173,46 @@
     <header>
       <h3>个人简介</h3>
       <p>周祥，1992 年 10 月 1 号出生于湖南岳阳，2013 年毕业于湖南工业职业技术学院室内设计专业。</p>
-      <p>熟悉 Vue 和 React 开发，了解 node.js。Github 重度用户，专门开发了 <a href="https://monine.github.io/gitstars/">Gitstars</a> 管理收藏的仓库，Vue 实现 (<a href="https://github.com/Monine/gitstars/tree/dev">源码</a>)，也有 React 实现 (<a href="https://github.com/Monine/gitstars/tree/react-dev">源码</a>)。</p>
-      <p>对前端工程化感兴趣，了解 webpack 工作原理，用它实现过前端多页工程配置 <a href="https://github.com/Monine/webpack-multi-page">webpack-multi-page</a> 。</p>目前前端方面日常的学习途径主要是大厂团队技术周刊、大牛博客和技术社区，除了学习之外的兴趣爱好是篮球、Dota、练字和逗猫。</p>
+      <p>熟悉 Vue，了解 React 和 node.js；Github 重度用户，专门开发了 <a href="https://monine.github.io/gitstars/">Gitstars</a> 管理收藏的仓库，Vue 实现 (<a href="https://github.com/Monine/gitstars/tree/dev">源码</a>)，也有 React 实现 (<a href="https://github.com/Monine/gitstars/tree/react-dev">源码</a>)。</p>
+      <p>对前端工程化感兴趣，了解 webpack 工作原理，用它实现过前端多页工程配置 <a href="https://github.com/Monine/webpack-multi-page">webpack-multi-page</a> 。</p>目前前端方面日常的学习途径主要是大厂团队技术周刊、大牛博客和技术社区，除了学习之外的兴趣爱好是篮球、Dota、猫。</p>
       <p>电话：186-9212-9257 &nbsp; 邮箱：<a href="mailTo:monine.zhou@gmail.com">monine.zhou@gmail.com</a> &nbsp; 博客：<a href="https://monine.github.io/">https://monine.github.io</a> &nbsp; <a href="https://github.com/Monine" class="github-icon"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></p>
     </header>
     <main>
       <h3>前端工作经历</h3>
       <ul class="companys">
         <li>
-          <p>
-            <b>北京金云同向信息科技有限公司 - 长沙办公处</b>
+          <p><b>湖南潭州教育网络科技有限公司（在职）</b></p>
+          <p><small>在线教育公司，营销线前端负责人。</small></p>
+          <p class="project-experience">
+            <b>项目经历</b>
           </p>
+          <ul class="work-projects">
+            <li  data-time-start="2017 - 4" data-time-end="&nbsp; 至 今 &nbsp; ">
+              <p>内部 CRM 系统</p>
+              <p>使用 Vue 全家桶开发的单页应用</p>
+              <p>包含广告创建和投放、流量收集和跟进、工单创建和审核、人员管理等功能的后台系统。参与了项目从 0 到 1 的过程，经历了最严谨的产品讨论和评审，刷新了我的认知。</p>
+              <p>贡献：</p>
+              <p>1. 推动了 GitFlow + PR 工作流在前端的应用</p>
+              <p>2. 实现了 <a href="https://github.com/Monine/monine.github.io/issues/29">接口异常状态统一处理方案</a>，解决的问题是如何优先让业务代码处理接口异常，再由业务端决定是否还需执行统一处理？难点在于 Promise 的处理如何逆向？最初的实现在 vue-cli 创建的 webpack 模板项目中存在兼容性问题，解决思路和方案可看此文：<a href="https://github.com/Monine/monine.github.io/issues/30">接口异常状态统一处理方案在 Firefox 下无效的原因和解决方案</a>，不断追本溯源，找到问题根源，再去思考解决方案。</p>
+              <p>3. 后台系统存在大量数据查询表格展示页面，包含三个通用模块：查询、表格、分页，通过 mixin 的方式抽象出重复、必须的数据和逻辑，比如翻页必然触发查询。</p>
+              <!-- <p>4. 项目最初没有注意和重视魔法数字的危害，导致版本迭代维护时难以理解。通过集中管理的方式，抽取所有魔法数字，组建数据模型，站在业务的角度命名魔法数字常量。业务代码强制要求不允许再写魔法数字，而是使用引入的数据模型的变量。Vue SFC template 内也需要用到数据模型，所以必须在 data 函数的返回对象内加入数据模型。但 Vue 的内部机制会使用 Object.defineProperty 对数据重写，达到可被观测的目的。但这里的数据模型是常量数据，永远不会发生改变，所以可以使用 Object.freeze 方法冻结数据模型对象，减少不必要开销。</p> -->
+              <p>4. 项目最初没有注意和重视魔法数字的危害，**取消了魔法数字的 ESlint 限制**，导致版本迭代维护时难以理解。后来通过数据模型的方式，将所有魔法数字按业务组成常量对象。</p>
+              <p>5. 之前 CRM 系统和工单系统是分开的两个项目，共同点是都使用 Vue 进行开发。因为一些原因，迭代过程中要求将两个系统合并为一个系统。经过一番思考研究，结合实际情况，两个项目存在许多工具函数、帮助函数、业务逻辑，甚至组件和页面都是差不多相同的。所以决定抽取出这两个项目的可共用代码，到一个新的项目，这个新的项目就作为这两个项目的核心仓库，将构建也放到这个核心仓库。</p>
+              <p>5. 项目迭代过程中，不断向小伙伴灌输模块化开发思想，并要求在项目中实践，拥抱模块化开发。</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><b>北京金云同向信息科技有限公司 - 长沙办公处</b></p>
           <p>
-            <small>电力新能源方向创业公司，以前端负责人身份加入。</small>
+            <small>电力新能源方向创业公司，前端负责人。离职原因是因为心累，从最初的心怀斗志到最后的怀疑人生，只用了一年时间。可能也是太年轻，熬不住创业的艰辛。这里带给我最大的收获是让我拥有了强大的内心，有解决任何前端问题信心。</small>
           </p>
           <p class="project-experience">
             <b>项目经历</b>
           </p>
           <ul class="work-projects">
-            <li data-time-end="&nbsp; 至 今 &nbsp; ">
-              <p>电厂内部系统</p>
+            <li data-time-end="2018 - 3">
+              <p>电厂内部系统（外包性质）</p>
               <p>使用 Vue 全家桶开发的单页应用</p>
               <p>包含人员维护、在线学习、在线考试、新闻发布等功能的后台系统</p>
             </li>
@@ -209,17 +229,15 @@
                 <a href="https://monine.github.io/#/article/21">文章链接</a> &nbsp;
                 <a href="https://github.com/Monine/webpack-multi-page">项目链接</a>
               </p>
-              <p>关于 webpack 打包优化的个人思考：类似于前端性能优化，将其分为缓存、体积和速度三方面。利用 dll，可拆分第三方依赖资源减小单文件体积并达到缓存效果；使用 CDN 配合 externals 配置可使资源不参与打包，减小体积和加快构建速度；模块化按需引入和异步加载等方式减小打包体积。速度方面针对 UglifyJS 单线程压缩使用多线程并行机制（生产环境）；Happypack 插件帮助 loader 并行处理资源；alias 配置、loader 添加 include 配置帮助 webpack 更快找到资源；babel-loader 开启 cacheDirectory 缓存结果；针对没有依赖的大型模块将其加入 noParse 配置。</p>
-              <!-- <p>关于项目构建性能方面的个人思考：随着项目业务内容增长，项目构建（打包）时间会越来越慢，而项目业务代码是不会对构建性能有太大影响的，因为代码总量就那么大。除了 Javascript 单线程运行的特性，主要原因还是 webpack 及所配置的 loader 对第三方依赖包的的解析处理导致。所以个人对项目构建性能优化的见解是对第三方依赖包的构建进行缓存，类似于网站性能优化中的缓存机制。因为大部分的依赖包内容在项目中是不变的，在第一次构建之后把结果缓存下来，以后再进行构建时就直接从缓存中获取内容，必然能对构建性能产生质的改变。</p> -->
+              <!-- <p>关于 webpack 打包优化的个人思考：类似于前端性能优化，将其分为缓存、体积和速度三方面。利用 dll，可拆分第三方依赖资源减小单文件体积并达到缓存效果；使用 CDN 配合 externals 配置可使资源不参与打包，减小体积和加快构建速度；模块化按需引入和异步加载等方式减小打包体积。速度方面针对 UglifyJS 单线程压缩使用多线程并行机制（生产环境）；Happypack 插件帮助 loader 并行处理资源；alias 配置、loader 添加 include 配置帮助 webpack 更快找到资源；babel-loader 开启 cacheDirectory 缓存结果；针对没有依赖的大型模块将其加入 noParse 配置。</p>
+              <p>关于项目构建性能方面的个人思考：随着项目业务内容增长，项目构建（打包）时间会越来越慢，而项目业务代码是不会对构建性能有太大影响的，因为代码总量就那么大。除了 Javascript 单线程运行的特性，主要原因还是 webpack 及所配置的 loader 对第三方依赖包的的解析处理导致。所以个人对项目构建性能优化的见解是对第三方依赖包的构建进行缓存，类似于网站性能优化中的缓存机制。因为大部分的依赖包内容在项目中是不变的，在第一次构建之后把结果缓存下来，以后再进行构建时就直接从缓存中获取内容，必然能对构建性能产生质的改变。</p> -->
             </li>
           </ul>
         </li>
         <li>
+          <p><b>北京智云时代科技有限公司 - 长沙分公司</b></p>
           <p>
-            <b>北京智云时代科技有限公司 - 长沙分公司</b>
-          </p>
-          <p>
-            <small>前端生涯的起点，在这里从初出茅庐的小菜鸟成长为能够担负责任的开发者，经历的所有项目谈不上什么贡献，都是尽最大所能在完成任务的同时保证质量，期间不断反思、总结和学习。因（创业）公司运营规划不善，产品全部被砍，开发人员被解散离职。</small>
+            <small>前端生涯的起点，在这里从初出茅庐的小菜鸟成长为能够担负责任的开发者，经历的所有项目谈不上什么贡献，都是尽最大所能在完成任务的同时保证质量，期间不断反思、总结和学习。因（创业）公司运营规划不善，产品全部被砍，开发人员被遣散，故离职。</small>
           </p>
           <p>
             <small>团队前端技术周刊 -
@@ -240,30 +258,22 @@
               <!-- <p>此项目对我而言有一个整体的提升，让我站在更高的角度思考项目中前端的一些取舍，并了解到与 App 客户端的协调合作。</p> -->
               <!-- <p>此项目期间，另外一个收获是学习了 Vue 相关知识，明白数据驱动视图、单向数据流等等思想，让我对前端的理解又到了一个新的境界。</p> -->
             </li>
-            <li data-time-end="2016 - 9">
-              <p>
-                <a href="http://mseller.70c.com/Content/home/index.html">70度微商城卖家平台（移动端）</a>
-              </p>
-              <p>使用 MSUI 实现的移动端单页应用</p>
-              <p>MSUI 与产品需求有水土不服的地方，在尽量不修改 MSUI 源码的前提下做一系列适配处理，详细内容可看 <a href="https://monine.github.io/#/worklog/6">2016 年 8 月份工作记录</a> 。最终依然修改了一些源码以适应产品需求，修改的内容主要是路由机制和页面内容切换显示时的过渡效果。</p>
-              <!-- <p>在此项目中了解到如何合理使用第三方库，如何处理第三方库与项目之间水土不服的问题，了解到移动端适配的一些问题和解决方案。</p> -->
-            </li>
             <li data-time-end="2016 - 8">
               <p>
                 <a href="http://shop.70c.com/e/CYACJZCJZG?h5State=636245628505721908">70度微商城 - 商品购买</a>
               </p>
               <p>以 OOP 方式实现的移动端商品展示、购买、订单和物流查询等</p>
-              <!-- <p>在此项目中加深了对 OOP 对理解和应用，了解到前端项目结构的部署，学会使用 gulp、Flex 布局、BFC、跨域通信等。</p> -->
               <p>期间遇到的一个跨域通信的难题，让我明白 window.postMessage 在跨域通信中的所能发挥的作用，并写下
-                <a href="https://monine.github.io/#/article/2">文章</a> 记录。虽然最终业务并没有使用到此方案，但在解决此业务问题的过程中让我对跨域通信有了更深层次的理解。</p>
+                <a href="https://github.com/Monine/monine.github.io/issues/2">文章</a> 记录（PS：后来还收到一些同行小伙伴的回复，表示感谢，很高兴）。虽然最终业务并没有使用到此方案，但在解决此业务问题的过程中让我对跨域通信有了更深层次的理解。</p>
             </li>
             <li data-time-start="2015 - 8" data-time-end="2016 - 4">
               <p>
                 <a href="http://my.70c.com/index/index">70度H5场景制作平台</a>
               </p>
               <p>基于 AngularJS 1.x 的单页应用开发</p>
-              <p>工作期间发现用户打开 H5 场景并没有完整观看，但场景图片资源全部被加载，可做懒加载和预加载优化。实现之后针对此类用户打开 H5 场景流量消耗减少约 80%，并且场景打开速度略微提升。</p>
-              <!-- <p>在此项目中了解到团队开发中必要的代码规范，与后端的协调合作，打包工具 grunt，管理工具 SVN 和 禅道，前端 MV* 的思想，学会使用 AngularJS，逐步提升对 HTML、CSS、JS 的理解和运用，处在一个前端开发者的初始阶段。</p> -->
+              <p>通过自身使用产品发现，用户可能并不会完整的观看 H5 场景，但场景存在大量图片资源全部会被加载。浪费流量、损耗性能、影响用户体验，可做懒加载和预加载优化。</p>
+              <p>优化思路：H5 场景打开默认加载第一页图片资源，页面 load 之后预加载第二页和最后一页图片资源（因为可以从第一页直接翻到最后一页），每当用户翻页完成后检查当前页的上一页和下一页图片资源是否被加载。</p>
+              <p>实现之后，图片资源流量消耗减少约 50%，并且场景打开速度略微提升。</p>
             </li>
           </ul>
         </li>
@@ -272,6 +282,27 @@
     <footer>
       <h3>个人项目</h3>
       <ul class="personal-projects">
+        <li>
+          <p class="title">
+            <a href="https://github.com/Monine/gitstars">
+              gitstars
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p>Github Stars 仓库标签管理器</p>
+        </li>
+        <li>
+          <p class="title">
+            <a href="https://github.com/Monine/webpack-multi-page">
+              webpack-multi-page
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p>webpack 前端多页项目工程</p>
+        </li>
         <li>
           <p class="title">
             <a href="https://github.com/Monine/monine.github.io">
@@ -287,39 +318,19 @@
           </p>
           <p>移动端下拉加载（刷新）和滚动加载</p>
         </li>
-        <li>
-          <p class="title">
-            <a href="https://github.com/Monine/webpack-multi-page">
-              webpack-multi-page
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </a>
-          </p>
-          <p>webpack 前端多页项目工程</p>
-        </li>
-        <li>
+        
+        <!-- <li>
           <p class="title">
             <a href="https://github.com/fe-monine/cross-menu">cross-menu</a>
           </p>
           <p>仿亚马逊智能导航菜单</p>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <p class="title">
             <a href="https://github.com/Monine/rcgber">rcgber</a>
           </p>
           <p>色彩丰富的图形背景生成器</p>
-        </li>
-        <li>
-          <p class="title">
-            <a href="https://github.com/Monine/gitstars">
-              gitstars
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </a>
-          </p>
-          <p>Github Stars 仓库标签管理器</p>
-        </li>
+        </li> -->
       </ul>
     </footer>
   </div>
