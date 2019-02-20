@@ -165,6 +165,15 @@
     .project-experience {
       margin: 0.5em 0 1em 0;
     }
+
+    .fa-star {
+      position: absolute;
+      top: -0.3em;
+      right: -0.3em;
+      font-size: 2em;
+      transform: rotate(30deg);
+      color: #108ee9;
+    }
   </style>
 </head>
 
@@ -172,37 +181,36 @@
   <div class="container-warp">
     <header>
       <h3>个人简介</h3>
-      <p>周祥，1992 年 10 月 1 号出生于湖南岳阳，2013 年毕业于湖南工业职业技术学院室内设计专业。</p>
-      <p>熟悉 Vue，了解 React 和 node.js；Github 重度用户，专门开发了 <a href="https://monine.github.io/gitstars/">Gitstars</a> 管理收藏的仓库，Vue 实现 (<a href="https://github.com/Monine/gitstars/tree/dev">源码</a>)，也有 React 实现 (<a href="https://github.com/Monine/gitstars/tree/react-dev">源码</a>)。</p>
-      <p>对前端工程化感兴趣，了解 webpack 工作原理，用它实现过前端多页工程配置 <a href="https://github.com/Monine/webpack-multi-page">webpack-multi-page</a> 。</p>目前前端方面日常的学习途径主要是大厂团队技术周刊、大牛博客和技术社区，除了学习之外的兴趣爱好是篮球、Dota、猫。</p>
-      <p>电话：186-9212-9257 &nbsp; 邮箱：<a href="mailTo:monine.zhou@gmail.com">monine.zhou@gmail.com</a> &nbsp; 博客：<a href="https://monine.github.io/">https://monine.github.io</a> &nbsp; <a href="https://github.com/Monine" class="github-icon"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></p>
+      <p>周祥，1992 年 10 月 1 号出生于湖南岳阳，2013 年毕业于湖南工业职业技术学院室内设计专业，因身体原因直到 2015 年才正式参加工作。</p>
+      <p>自学前端，方式是模仿 <a href="https://github.com/jendewalt">jennifer_dewalt</a> - <a href="https://jenniferdewalt.com/">180 天做 180 个网页</a>。但我资质一般，只做了 <a href="https://monine.github.io/study/public/index.html">36 个页面</a>。</p>
+      <p>前端基础扎实，熟悉 Vue，了解 React 和 Node.js。</p>
+      <p>Github 重度用户，专门开发了 <a href="https://monine.github.io/gitstars/">Gitstars</a> 管理收藏的仓库，Vue 实现 <a href="https://github.com/Monine/gitstars/tree/dev">源码</a>，也有 React 实现 <a href="https://github.com/Monine/gitstars/tree/react-dev">源码</a>。</p>
+      <p>对前端工程化感兴趣，了解 webpack 工作原理，实现过前端多页工程配置 <a href="https://github.com/Monine/webpack-multi-page">webpack-multi-page</a> 。</p>
+      <p>日常前端学习途径主要是技术周刊、大牛博客和技术社区；兴趣爱好是篮球、Dota、猫。</p>
+      <p>电话：186-9212-9257 &nbsp; 邮箱：<a href="mailTo:monine.zhou@gmail.com">monine.zhou@gmail.com</a> &nbsp; 博客：<a href="https://monine.github.io/">https://monine.github.io</a> &nbsp; Github：<a href="https://github.com/monine">https://github.com/monine</a></p>
     </header>
     <main>
       <h3>前端工作经历</h3>
       <ul class="companys">
         <li>
           <p><b>湖南潭州教育网络科技有限公司（在职）</b></p>
-          <p><small>在线教育公司，营销线前端负责人。</small></p>
+          <p><small>一家非常重视企业文化的在线教育公司，营销线前端负责人。最大的收获在团队协作开发标准化、前端工程化、模块化开发等方面有了些许造诣。</small></p>
           <p class="project-experience">
             <b>项目经历</b>
           </p>
           <ul class="work-projects">
             <li  data-time-start="2017 - 4" data-time-end="&nbsp; 至 今 &nbsp; ">
-              <p>内部 CRM 系统</p>
-              <p>使用 Vue 全家桶开发的单页应用</p>
-              <p>包含广告创建和投放、流量收集和跟进、工单创建和审核、人员管理等功能的后台系统。参与了项目从 0 到 1 的过程，经历了最严谨的产品讨论和评审，刷新了我的认知。</p>
+              <p><a href="https://crm-test.shiguangkey.com">潭州 CRM 系统</a></p>
+              <p>使用 Vue 全家桶开发的单页应用；包含广告创建和投放、流量收集和跟进、工单创建和审核、人员管理等功能的后台系统；参与了项目从 0 到 1 的过程，经历了最严谨的产品讨论和评审，刷新了我的认知。</p>
               <p>贡献：</p>
               <p>1. 推动了 GitFlow + PR 工作流在前端的应用，标准化协作开发。</p>
               <p>2. 不断向小伙伴灌输模块化开发思想，并要求在项目中实践，拥抱模块化开发。</p>
               <p>3. 实现了 <a href="https://github.com/Monine/monine.github.io/issues/29">接口异常状态统一处理方案</a>，解决的问题是如何优先让业务代码处理接口异常，再由业务端决定是否还需执行统一处理？难点在于 Promise 的处理如何逆向？最初的实现存在兼容性问题，解决思路和方案可看此文：<a href="https://github.com/Monine/monine.github.io/issues/30">接口异常状态统一处理方案在 Firefox 下无效的原因和解决方案</a>。不断追本溯源，找到问题根源，再去思考解决方案。</p>
               <p>4. 后台系统存在大量数据查询表格展示页面，包含三个通用模块：查询、表格、分页，通过 mixin 的方式抽象出重复、必须的数据和逻辑，比如翻页必然触发查询。</p>
               <!-- <p>4. 项目最初没有注意和重视魔法数字的危害，导致版本迭代维护时难以理解。通过集中管理的方式，抽取所有魔法数字，组建数据模型，站在业务的角度命名魔法数字常量。业务代码强制要求不允许再写魔法数字，而是使用引入的数据模型的变量。Vue SFC template 内也需要用到数据模型，所以必须在 data 函数的返回对象内加入数据模型。但 Vue 的内部机制会使用 Object.defineProperty 对数据重写，达到可被观测的目的。但这里的数据模型是常量数据，永远不会发生改变，所以可以使用 Object.freeze 方法冻结数据模型对象，减少不必要开销。</p> -->
-              <p>5. 项目最初没有注意和重视魔法数字的危害，导致版本迭代维护时难以理解。后来通过数据模型的方式，将所有魔法数字按业务组成常量对象，并添加 ESLint no-magic-numbers 规则。由于 Vue 的观察机制，使用 Object.freeze 冻结常量对象，降低性能开销。</p>
-              <p>6. 之前 CRM 和工单是分开的两个系统，共同点是都使用 Vue 进行开发。因为一些原因，迭代过程中要求合并为一个系统。经过一番思考研究，结合实际情况，两个项目存在许多类似的代码，比如有工具函数、帮助函数、业务逻辑，甚至组件和页面都是很类似。故决定抽取出这两个项目的可共用代码，到一个新项目，作为这两个项目的核心仓库。为了解决依赖的重复安装和版本管理，探索发现 npm 的依赖可通过 file: 相对路径 的方式引用解决此问题。</p>
-              <p>7. 在自己负责的项目中使用 commitizen 工具要求团队规划范 commit，结合 conventional-changelog 工具和 npm 的 version 钩子在每次版本升级时自动更新 CHANGELOG。</p>
-              <p>不足：</p>
-              <p>1. 没有推动单元测试的使用</p>
-              <p>2. 没有推动单元测试的使用</p>
+              <p>5. 项目最初没有注意和重视魔法数字的危害，导致版本迭代维护时难以理解。后来根据业务组件数据模型，将所有魔法数字设置成常量对象属性值，并添加 ESLint no-magic-numbers 规则。由于 Vue 的观察机制，认为可使用 Object.freeze 冻结常量对象，降低性能开销。</p>
+              <p>6. 在自己负责的项目中使用 commitizen 工具要求团队小伙伴规划范 commit，结合 conventional-changelog 工具和 npm 的 version 钩子在每次版本升级时自动更新生成 CHANGELOG 内容。</p>
+              <p>7. 之前 CRM 和工单是分开的两个系统，共同点是都使用 Vue 进行开发。因为一些原因，迭代过程中要求合并为一个系统。经过一番思考研究，结合实际情况，两个项目存在许多类似的代码，比如有工具函数、帮助函数、业务逻辑，甚至组件和页面都是很类似。故决定抽取出这两个项目的可共用代码，到一个新项目，作为这两个项目的核心仓库。为了解决依赖的重复安装和版本管理，探索发现 npm 的依赖可通过 `file: 相对路径` 的方式引用本地依赖解决此问题。</p>
             </li>
           </ul>
         </li>
@@ -287,39 +295,20 @@
       <h3>个人项目</h3>
       <ul class="personal-projects">
         <li>
-          <p class="title">
-            <a href="https://github.com/Monine/gitstars">
-              gitstars
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </a>
-          </p>
+          <p class="title"><a href="https://github.com/Monine/gitstars">gitstars</a></p>
           <p>Github Stars 仓库标签管理器</p>
+          <i class="fa fa-star" aria-hidden="true"></i>
         </li>
         <li>
-          <p class="title">
-            <a href="https://github.com/Monine/webpack-multi-page">
-              webpack-multi-page
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </a>
-          </p>
+          <p class="title"><a href="https://github.com/Monine/webpack-multi-page">webpack-multi-page</a></p>
           <p>webpack 前端多页项目工程</p>
         </li>
         <li>
-          <p class="title">
-            <a href="https://github.com/Monine/monine.github.io">
-              Blog
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </a>
-          </p>
+          <p class="title"><a href="https://github.com/Monine/monine.github.io">Blog</a></p>
           <p>使用 Vue 和 Github 打造的个人博客</p>
         </li>
         <li>
-          <p class="title">
-            <a href="https://github.com/Monine/tractor.js">tractor.js</a>
-          </p>
+          <p class="title"><a href="https://github.com/Monine/tractor.js">tractor.js</a></p>
           <p>移动端下拉加载（刷新）和滚动加载</p>
         </li>
         
