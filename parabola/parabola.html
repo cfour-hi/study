@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Parabola</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    .ball {
+      position: absolute;
+      top: 300px; left: 300px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background-color: #0096ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+  <script src="./parabola.js"></script>
+  <script>
+    (function() {
+
+      setInterval(function() {
+        var ball = document.createElement('div');
+        ball.setAttribute('class', 'ball');
+        document.body.insertAdjacentElement('afterbegin', ball);
+
+        var p = new Parabola({
+          el: ball,
+          curvature: 0.7,
+          direction: 'down',
+          speed: 5,
+          origin: { x: 300, y: 300 },
+          target: { x: 10, y: 600 },
+          onMotionDone: function() {
+            ball.remove();
+          }
+        });
+        p.start();
+      }, 1000);
+
+    })();
+  </script>
+</body>
+</html>

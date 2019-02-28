@@ -1,0 +1,62 @@
+.controller {
+  display: none;
+  height: 150px;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .controller {
+    display: block;
+  }
+}
+.controller .controller-dir {
+  position: absolute;
+  width: 50px; height: 50px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-style: normal;
+  font-size: 20px;
+  color: #ccc;
+  background-color: #fff;
+}
+.controller .controller-dir::before {
+  content: '';
+  position: absolute;
+  top: 10px; left: 10px;
+  border: 15px solid transparent;
+}
+.controller .controller-dir.active {
+  color: #fff;
+  background-color: #108ee9;
+}
+
+.controller .controller-up {
+  margin-top: 10px; margin-left: -25px;
+}
+.controller .controller-up::before {
+  margin-top: -10px;
+  border-bottom-color: currentColor;
+}
+
+.controller .controller-down {
+  margin-top: 90px; margin-left: -25px;
+}
+.controller .controller-down::before {
+  margin-top: 10px;
+  border-top-color: currentColor;
+}
+
+.controller .controller-left {
+  margin-top: 50px; margin-left: -75px;
+}
+.controller .controller-left::before {
+  margin-left: -10px;
+  border-right-color: currentColor;
+}
+
+.controller .controller-right {
+  margin-top: 50px; margin-left: 25px;
+}
+.controller .controller-right::before {
+  margin-left: 10px;
+  border-left-color: currentColor;
+}

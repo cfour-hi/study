@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pong</title>
+  <link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../lib/css/app.css">
+  <link rel="stylesheet" href="pong.css">
+</head>
+<body>
+  <main>
+    <div class="game-wrap">
+      <canvas class="pong-canvas" width="600" height="500" style="cursor: crosshair;"></canvas>
+    </div>
+  </main>
+  <section class="dialog-modal dialog-modal__desc active">
+    <div class="dialog-modal__wrap">
+      <div class="dialog-modal__main">
+        <header>游戏说明</header>
+        <div class="dialog-modal__body">
+          <ul class="game-desc">
+            <li>电脑端：上下移动鼠标</li>
+            <li>移动端：上下滑动屏幕</li>
+          </ul>
+        </div>
+        <footer>
+          <button class="start-game" type="button">开始游戏</button>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <section class="dialog-modal dialog-modal__gameover">
+    <div class="dialog-modal__wrap">
+      <div class="dialog-modal__main">
+        <header>游戏结束</header>
+        <div class="dialog-modal__body">
+          <big class="game-over">Game Over!</big>
+        </div>
+        <footer>
+          <button class="start-game" type="button">再玩一次</button>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <script src="pong.js"></script>
+</body>
+</html>

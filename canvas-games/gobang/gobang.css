@@ -1,0 +1,77 @@
+.gobang {
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.chessboard-base {
+  position: relative;
+}
+.chessboard-line {
+  position: absolute;
+  background-color: #333;
+}
+.chessboard-line.horizontal-line {
+  height: 2px;
+}
+.chessboard-line.vertical-line {
+  width: 2px;
+}
+.chessboard-pieces {
+  position: relative;
+}
+.chessboard-piece {
+  position: absolute;
+  width: 36px; height: 36px;
+  cursor: auto;
+}
+.backspace-piece {
+  visibility: hidden;
+}
+
+.canvas-operate {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.next-piece {
+  display: block;
+  width: 90px; height: 30px;
+  margin: 20px 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.next-piece.white-piece {
+  background-image: url(assets/white-piece.png);
+}
+.next-piece.black-piece {
+  background-image: url(assets/black-piece.png);
+}
+
+.canvas-operate button {
+  width: 90px; height: 30px;
+  border: none;
+  margin: 10px 5px;
+  color: #fff;
+  cursor: pointer;
+}
+.canvas-operate .backspace {
+  background-color: #f56a00;
+}
+.canvas-operate .cancel-backspace {
+  background-color: #108ee9;
+}
+.canvas-operate .cancel-backspace[disabled] {
+  background-color: #919191;
+}
+
+.dialog-modal__main footer button {
+  float: left;
+  width: 50%;
+}
+.dialog-modal__main footer .canvas-game {
+  background-color: #00a2ae;
+}

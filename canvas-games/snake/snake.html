@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Snake</title>
+  <link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../lib/css/app.css">
+  <link rel="stylesheet" href="snake.css">
+  <script src="../lib/js/pep.min.js"></script>
+</head>
+<body>
+  <main>
+    <div class="game-wrap">
+      <canvas class="snake-canvas" width="600" height="500"></canvas>
+    </div>
+    <aside class="controller">
+      <button type="button" class="controller-dir controller-up" data-dir="up" touch-action="none"></button>
+      <button type="button" class="controller-dir controller-down" data-dir="down" touch-action="none"></button>
+      <button type="button" class="controller-dir controller-left" data-dir="left" touch-action="none"></button>
+      <button type="button" class="controller-dir controller-right" data-dir="right" touch-action="none"></button>
+    </aside>
+  </main>
+  <section class="dialog-modal dialog-modal__desc active">
+    <div class="dialog-modal__wrap">
+      <div class="dialog-modal__main">
+        <header>游戏说明</header>
+        <div class="dialog-modal__body">
+          <ul class="game-desc">
+            <li>电脑端：键盘上下左右键移动</li>
+            <li>移动端：点击屏幕底部上下左右按钮移动</li>
+          </ul>
+        </div>
+        <footer>
+          <button class="start-game" type="button">开始游戏</button>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <section class="dialog-modal dialog-modal__gameover">
+    <div class="dialog-modal__wrap">
+      <div class="dialog-modal__main">
+        <header>游戏结束</header>
+        <div class="dialog-modal__body">
+          <bid class="game-over">Game Over!</bid>
+        </div>
+        <footer>
+          <button class="start-game" type="button">再玩一次</button>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <script src="snake.js"></script>
+</body>
+</html>

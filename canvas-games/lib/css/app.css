@@ -1,0 +1,94 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  /*padding: 0; margin: 0;*/
+}
+body {
+  position: relative;
+  height: 100%;
+  font: 16px/1.8 "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  word-wrap: break-word;
+  color: rgba(0, 0, 0, 0.75);
+}
+main {
+  overflow: hidden;
+  width: 100%; height: 100%;
+}
+canvas {
+  display: block;
+  border: 1px solid #ccc;
+  margin: 10px auto;
+}
+ol,
+ul {
+  padding-left: 20px;
+}
+
+@media (min-width: 600px) {
+  main {
+    display: table;
+  }
+  canvas {
+    margin: 0 auto;
+  }
+  .game-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.dialog-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.dialog-modal.active {
+  display: table;
+}
+.dialog-modal__wrap {
+  display: table-cell;
+  vertical-align: middle;
+}
+.dialog-modal__main {
+  overflow: hidden;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.dialog-modal__main header {
+  padding: 10px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 20px;
+}
+.dialog-modal__body {
+  padding: 15px;
+  line-height: 1.5;
+}
+.dialog-modal__main footer {
+  height: 50px;
+}
+
+.dialog-modal__main footer button {
+  width: 100%; height: 100%;
+  border: none;
+  color: #fff;
+  background-color: #108ee9;
+  cursor: pointer;
+}
+
+.game-desc {
+  text-align: left;
+}
+.game-over {
+  font-size: 40px;
+  color: #f04134;
+}

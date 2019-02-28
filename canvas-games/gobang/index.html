@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gobang</title>
+  <link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../lib/css/app.css">
+  <link rel="stylesheet" href="gobang.css">
+</head>
+<body>
+  <main>
+    <div class="game-wrap"></div>
+    <div class="canvas-operate">
+      <i class="next-piece white-piece"></i>
+      <button class="backspace" type="button">悔棋</button>
+      <button class="cancel-backspace" type="button">撤销悔棋</button>
+    </div>
+  </main>
+  <section class="dialog-modal dialog-modal__desc active">
+    <div class="dialog-modal__wrap">
+      <div class="dialog-modal__main">
+        <header>游戏说明</header>
+        <div class="dialog-modal__body">
+          <p>五子棋</p>
+        </div>
+        <footer>
+          <button class="start-game canvas-game" type="button" data-type="canvas">canvas 游戏</button>
+          <button class="start-game dom-game" type="button" data-type="dom">DOM 游戏</button>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <section class="dialog-modal dialog-modal__gameover">
+    <div class="dialog-modal__wrap">
+      <div class="dialog-modal__main">
+        <header>游戏结束</header>
+        <div class="dialog-modal__body">
+          <big class="game-over"></big>
+        </div>
+        <footer>
+          <button class="start-game canvas-game" type="button" data-type="canvas">canvas 游戏</button>
+          <button class="start-game dom-game" type="button" data-type="dom">DOM 游戏</button>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <script src="//cdn.bootcss.com/require.js/2.3.3/require.min.js" data-main="main"></script>
+</body>
+</html>
